@@ -1,0 +1,18 @@
+{% set page = {
+  title: "button_brdr_strong",
+  description: "button с радиусом 50px"
+} %}
+
+{% import "./templates.njk" as button %}
+
+{% extends fesg.components %}
+
+{% block body %}
+
+  {% section title="Кнопка с большим радиусом" %}
+    {{ button.bgr("") }}
+  {% code %}
+    {{ button.bgr("") }}
+  {% endsection %}
+
+{% endblock %}

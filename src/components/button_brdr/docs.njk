@@ -1,0 +1,18 @@
+{% set page = {
+  title: "button_brdr",
+  description: "button с рамкой"
+} %}
+
+{% import "./templates.njk" as button %}
+
+{% extends fesg.components %}
+
+{% block body %}
+
+  {% section title="button_brdr", description="Кнопка с рамкой" %}
+    {{ button.element("- кнопка2") }}
+  {% code %}
+    {{ button.element("- кнопка") }}
+  {% endsection %}
+
+{% endblock %}

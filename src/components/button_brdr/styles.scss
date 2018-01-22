@@ -1,0 +1,23 @@
+.button_brdr {
+  outline: 2px solid $blue;
+  outline-offset: -2px;
+
+  &:hover {
+    color: #fff;
+    background-color: $darkblue;
+    outline: 0;
+  }
+
+  &:focus {
+    color: #fff;
+    background-color: $darkblue;
+    outline: 2px solid $blue;
+  }
+
+  &:active {
+    color: #fff;
+    background-color: $darkerblue;
+    outline: 0; 
+  }
+}
+

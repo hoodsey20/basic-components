@@ -1,0 +1,13 @@
+{% macro clear (name) %}
+  <button class="button button_circle">Кнопка{{ name }}</button>
+{% endmacro %}
+
+{% macro default (name) %}
+  <button class="button button_bgr button_circle">Кнопка{{ name }}</button>
+{% endmacro %}
+
+{% macro sign (name) %}
+<button class="button button_bgr button_circle">{{ name }}
+  <i class="fa fa-play" aria-hidden="true"></i>
+</button>
+{% endmacro %}

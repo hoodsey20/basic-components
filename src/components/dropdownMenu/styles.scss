@@ -1,0 +1,45 @@
+$white: #fff;
+$blue: #2f80ed;
+$darkblue: #2361b2;
+$darkerblue: #1a4884;
+
+.dropdownMenu {
+  position: relative;
+  display: inline-block;
+  padding-right: 15px;
+}
+
+.dropdownMenu.isOpen {
+  .dropdownMenu__list {
+    display: inline-block;
+    z-index: 999;
+  }
+}
+
+.dropdownMenu__wrap {
+  position: relative;
+  min-width: 200px;
+}
+
+.dropdownMenu__title {
+  display: inline-block;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.dropdownMenu__currentValue {
+  display: inline-block;
+  margin-left: 5px;
+}
+
+.dropdownMenu__list {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  display: none;
+  vertical-align: middle;
+  padding: 10px 20px;
+
+  background-color: #fcfdff;
+  box-shadow: 0 0 20px 0 rgba(1, 1, 1, 0.15);
+}

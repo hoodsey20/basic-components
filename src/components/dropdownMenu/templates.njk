@@ -1,0 +1,14 @@
+{% macro clear (name) %}
+  <div class="dropdownMenu js-dropdownMenu">
+    <div class="dropdownMenu__wrap">
+      <div class="dropdownMenu__title">Сортировать по:</div>
+      <div class="dropdownMenu__currentValue"></div>
+        <ul class="dropdownMenu__list">
+          <li class="dropdownMenu__item">Цене</li>
+          <li class="dropdownMenu__item">Популярности</li>
+          <li class="dropdownMenu__item">Скидке</li>
+          <li class="dropdownMenu__item isActive">Актуальности</li>
+        </ul>      
+    </div>
+  </div>
+{% endmacro %}

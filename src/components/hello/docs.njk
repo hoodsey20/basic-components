@@ -1,0 +1,28 @@
+{% set page = {
+  title: "Hello",
+  description: "First we have to greet the world!"
+} %}
+
+{% import "./templates.njk" as hello %}
+
+{% extends fesg.components %}
+
+{% block body %}
+
+  {% section title="Default", description="A nice greeting" %}
+    {{ hello.default("World 11") }}
+  {% usage %}
+    This doesn't really do anything other than
+    * print `Hello World` and
+    * that's pretty much it…
+    * saldsal;d
+  {% code %}
+    {{ hello.default("World") }}
+
+  {% endsection %}
+
+  {% section title="Slightly longer", description="Let's add a bit more verbosity…" %}
+    {{ hello.longform("World") }}
+  {% endsection %}
+
+{% endblock %}

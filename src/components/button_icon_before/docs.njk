@@ -1,0 +1,30 @@
+{% set page = {
+  title: "button_icon_before",
+  description: "button со значком перед"
+} %}
+
+{% import "./templates.njk" as button %}
+
+{% extends fesg.components %}
+
+{% block body %}
+
+  {% section title="Кнопка со значком перед" %}
+    {{ button.default("") }}
+  {% usage %}
+    Используется иконочный шрифт [fontawesome](http://fontawesome.io/icons/)
+    
+  {% code %}
+    {{ button.default("") }}
+  {% endsection %}
+
+  {% section title="Кнопка со значком перед и фоном" %}
+    {{ button.bgr("") }}
+  {% usage %}
+    Используется иконочный шрифт [fontawesome](http://fontawesome.io/icons/)
+    
+  {% code %}
+    {{ button.bgr("") }}
+  {% endsection %}
+
+{% endblock %}

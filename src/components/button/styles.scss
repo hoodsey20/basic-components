@@ -1,0 +1,39 @@
+$white: #fff;
+$blue: #2f80ed;
+$darkblue: #2361b2;
+$darkerblue: #1a4884;
+
+.button {
+  display: inline-block;
+  padding: 0 40px;
+  border: 0;
+  
+  font-size: 14px;
+  line-height: 55px;
+  text-decoration: none;
+
+  background-color: transparent;
+  color: $blue;
+  border-radius: 0;
+
+
+  &:hover {
+    color: #fff;
+    background-color: $blue;
+  }
+
+  &:focus {
+    color: #fff;
+    background-color: $blue;
+    outline: 2px solid $darkblue;
+    outline-offset: -2px;
+  }
+
+  &:active {
+    color: $blue;
+    background-color: transparent;
+    outline: 2px solid $darkblue;
+    outline-offset: -2px;    
+  }
+}
+

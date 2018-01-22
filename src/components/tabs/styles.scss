@@ -1,0 +1,50 @@
+$menuLinkColor: #fff;
+$menuBgr: #2F80ED;
+$menuUnderline: #56CCF2;
+
+.menuList_lvl0 {
+  background-color: #fff;
+}
+
+.menuList__item_lvl0 {
+  position: relative;
+  padding: 0 30px;
+
+
+  background-color: $menuBgr;
+  transition: all 0.5s linear;
+
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+
+    background-color: $menuUnderline;
+    transition: all 0.6s linear;
+  }
+
+  &:hover {
+    &:before {
+      width: 100%;
+    } 
+  }
+}
+
+.menuList__link {
+  position: relative;
+  display: inline-block;
+  
+  font-size: 12px;
+  line-height: 48px;
+  
+  text-decoration: none;
+
+  color: $menuLinkColor;
+}
+
+.menuList_lvl1 {
+  display: none;
+}

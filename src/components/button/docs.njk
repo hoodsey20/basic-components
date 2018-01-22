@@ -1,0 +1,25 @@
+{% set page = {
+  title: "Button",
+  description: "Just a button"
+} %}
+
+{% import "./templates.njk" as button %}
+
+{% extends fesg.components %}
+
+{% block body %}
+
+  {% section title="Clear", description="Без модификаторов" %}
+    {{ button.clear("- кнопка") }}
+  {% code %}
+    {{ button.clear("- кнопка") }}
+  {% endsection %}
+
+  {% section title="ссылка с видом кнопки" %}
+    {{ button.link("- ссылка") }}
+  {% code %}
+    {{ button.link("- ссылка") }}
+  {% endsection %}
+
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% set page = {
+  title: "menuList",
+  description: "Выпадающее меню"
+} %}
+
+{% import "./templates.njk" as element %}
+
+{% extends fesg.components %}
+
+{% block body %}
+
+  {% section title="Clear", description="Без модификаторов" %}
+    {{ element.clear("- кнопка") }}
+  {% code %}
+    {{ element.clear("- кнопка") }}
+  {% endsection %}
+
+{% endblock %}

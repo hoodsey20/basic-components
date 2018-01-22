@@ -1,0 +1,20 @@
+// Vendor
+@import "../node_modules/normalize.css/normalize.css";
+@import "../node_modules/font-awesome/css/font-awesome.css";
+
+// Setup
+@import "setup/variables";
+@import "setup/scaffolding";
+
+// Components
+@import "components/index";
+
+* {
+  font-family: sans-serif;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
