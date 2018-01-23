@@ -1,0 +1,45 @@
+$menuLinkColor: #fff;
+$menuBgr: #2F80ED;
+$menuUnderline: #56CCF2;
+$menuHoverBgr: #2666BE;
+$menuCurrentBgr: #1C4D8E;
+$menuDisabledBgr: #DCDCDC;
+$menuDisabledFontBgr: #A1A1A1;
+$menuLVL1Bgr: #FCFCFC;
+$menuLVL1HoverBgr: #DCDCDC;
+$menuLVL1Color: #666;
+
+
+.menuList_flatHover {
+  display: flex;
+  flex-direction: row;
+
+  .menuList__item_lvl0 > .menuList__link {
+    height: 48px;
+  }
+
+  .menuList__item_lvl1 > .menuList__link {
+    padding-left: 30px;
+  }
+
+  .menuList_lvl1 {
+    position: absolute;
+    z-index: 99;
+  }
+
+  .menuList_lvl2 {
+    position: absolute;
+    width: 100%;
+    z-index: 999;
+    top: 0;
+    right: -100%;
+  }
+
+  .menuList__item.isParent:hover > .menuList {
+    display: block;
+  }
+
+
+}
+
+

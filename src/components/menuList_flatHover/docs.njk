@@ -1,6 +1,6 @@
 {% set page = {
-  title: "Tabs",
-  description: "табы прозрачные, ховер заливка"
+  title: "menuList",
+  description: "Выпадающее меню горизонтальное"
 } %}
 
 {% import "./templates.njk" as element %}
@@ -9,7 +9,7 @@
 
 {% block body %}
 
-  {% section title="Clear", description="Без модификаторов" %}
+  {% section title="Clear", description="Горизонтальное меню" %}
     {{ element.clear("- кнопка") }}
   {% code %}
     {{ element.clear("- кнопка") }}

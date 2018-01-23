@@ -1,24 +1,14 @@
 {% macro clear (name) %}
-<ul class="menuList menuList_lvl0 js-menuList" style="max-width: 250px;">
-  <li class="menuList__item menuList__item_lvl0 isParent">
-    <a class="menuList__link " href="#">Пункт меню (родительский)</a>
-    <ul class="menuList menuList_lvl1">
-      <li class="menuList__item menuList__item_lvl1">
-        <a class="menuList__link" href="#">Пункт меню второго уровня</a>
-      </li>
-      <li class="menuList__item menuList__item_lvl1">
-        <a class="menuList__link" href="#">Пункт меню второго уровня</a>
-      </li>
-    </ul>
-  </li>
-  <li class="menuList__item menuList__item_lvl0 isCurrent">
-    <a class="menuList__link" href="#">Пункт меню активный</a>
-  </li>
-  <li class="menuList__item menuList__item_lvl0">
-    <a class="menuList__link" href="#">Пункт меню самый простой</a>
-  </li>
-  <li class="menuList__item menuList__item_lvl0">
-    <a class="menuList__link" href="#">Пункт меню самый простой</a>
-  </li>
-</ul>
+<div class="tabs js_tabs">
+     <div class="tabs__list">
+       <span class="tabs__item isActive" data-tabitem="1">Главная</span>
+       <span class="tabs__item" data-tabitem="2">Музыка</span>
+       <span class="tabs__item" data-tabitem="3">Видео</span>
+     </div>
+     <div class="tabs__contentContainer">
+       <div class="tabs__contentItem isOpen" data-tabcontent="1"><p>контент 1</p></div>
+       <div class="tabs__contentItem" data-tabcontent="2"><p>контент 2</p></div>
+       <div class="tabs__contentItem" data-tabcontent="3"><p>контент 3</p></div>
+     </div>
+   </div>   
 {% endmacro %}
