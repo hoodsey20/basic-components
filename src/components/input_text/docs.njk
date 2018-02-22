@@ -1,0 +1,43 @@
+{% set page = {
+  title: "input type='text'",
+  description: "Поля ввода"
+} %}
+
+{% import "./templates.njk" as element %}
+
+{% extends fesg.components %}
+
+{% block body %}
+
+  {% section title="Clear", description="Без модификаторов" %}
+    {{ element.clear("- кнопка") }}
+  {% code %}
+    {{ element.clear("- кнопка") }}
+  {% endsection %}
+
+  {% section title="clear_nonBorder", description="Стандартная без рамки" %}
+    {{ element.clear_nonBorder() }}
+  {% code %}
+    {{ element.clear_nonBorder() }}
+  {% endsection %}
+
+
+  {% section title="borderRad", description="С закруглением" %}
+    {{ element.borderRad() }}
+  {% code %}
+    {{ element.borderRad() }}
+  {% endsection %}
+
+  {% section title="borderCircle", description="Круглый бордер" %}
+    {{ element.borderCircle() }}
+  {% code %}
+    {{ element.borderCircle() }}
+  {% endsection %}
+
+  {% section title="borderTransform", description="Как у гугла" %}
+    {{ element.borderTransform() }}
+  {% code %}
+    {{ element.borderTransform() }}
+  {% endsection %}
+
+{% endblock %}

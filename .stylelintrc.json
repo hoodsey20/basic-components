@@ -10,7 +10,7 @@
     "max-nesting-depth": [3, {
       "severity": "warning"
     }],
-    "no-duplicate-selectors": true,
+    "no-duplicate-selectors": null,
     "no-unknown-animations": true,
     "order/properties-alphabetical-order": null,
     "scss/dollar-variable-colon-space-after": "always-single-line",

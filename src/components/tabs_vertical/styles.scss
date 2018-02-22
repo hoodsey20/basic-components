@@ -1,0 +1,25 @@
+$menuLinkColor: #fff;
+$menuBgr: #2F80ED;
+$menuUnderline: #56CCF2;
+
+.tabs_vertical {
+  font-size: 0;
+
+  .tabs__list {
+    display: inline-block;
+    width: 19%;
+    vertical-align: top;
+    margin-right: 1%;
+  }
+
+  .tabs__item {
+    display: block;
+  }
+
+  .tabs__contentContainer {
+    display: inline-block;
+    width: 80%;
+    vertical-align: top;
+    margin-top: 0;
+  }
+}

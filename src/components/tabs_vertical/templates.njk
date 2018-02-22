@@ -1,0 +1,14 @@
+{% macro clear (name) %}
+<div class="tabs tabs_vertical js_tabs">
+     <div class="tabs__list">
+       <span class="tabs__item isActive" data-tabitem="1">Главная</span>
+       <span class="tabs__item" data-tabitem="2">Музыка</span>
+       <span class="tabs__item" data-tabitem="3">Видео</span>
+     </div>
+     <div class="tabs__contentContainer">
+       <div class="tabs__contentItem isOpen" data-tabcontent="1"><p>контент 1</p></div>
+       <div class="tabs__contentItem" data-tabcontent="2"><p>контент 2</p></div>
+       <div class="tabs__contentItem" data-tabcontent="3"><p>контент 3</p></div>
+     </div>
+   </div>   
+{% endmacro %}

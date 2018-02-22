@@ -1,0 +1,18 @@
+{% set page = {
+  title: "Tabs",
+  description: "вертикальные табы прозрачные, ховер заливка"
+} %}
+
+{% import "./templates.njk" as element %}
+
+{% extends fesg.components %}
+
+{% block body %}
+
+  {% section title="Clear", description="Вертикальные" %}
+    {{ element.clear("- кнопка") }}
+  {% code %}
+    {{ element.clear("- кнопка") }}
+  {% endsection %}
+
+{% endblock %}
