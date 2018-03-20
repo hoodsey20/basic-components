@@ -1,0 +1,77 @@
+$accentColor: #2F80ED;
+$textColor: #666;
+
+.select_custom {
+  position: relative;
+  max-width: 330px;
+  margin-top: 5px;
+  border: 2px solid #E0E0E0;
+  padding: 15px 18px;
+  padding-right: 30px;
+  color: #c4c4c4;
+
+  &:before {
+    content: "\f0d7";
+    position: absolute;
+    top: 13px;
+    right: 14px;
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    font-size: 18px;
+    color: $accentColor;
+    pointer-events: none;
+  }
+
+  &.select_icon > .fa {
+    position: absolute;
+    top: 13px;
+    right: -30px;
+    font-size: 18px;
+    color: #ccc;
+    cursor: pointer;
+  }
+
+  &.isCompleted {  
+    color: $textColor;
+    
+    .option {
+      color: $textColor;
+    }
+    
+    >.fa {
+      color: $accentColor;
+    }
+  }
+ 
+  .select__optionList {
+    position: absolute;
+    display: none;
+    width: calc(100% - 2px);
+    top: 45px;
+    left: -1px;
+    width: calc(100% + 2px);
+    background: #FCFCFC;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    z-index: 99;
+  }
+
+  .option {
+    position: relative;
+    margin-bottom: -1px;
+    padding: 15px 18px;
+    padding-right: 30px;
+    color: #c4c4c4;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #fff;
+      color: #ccc;
+    }
+  }
+
+  .addElement {
+    border-top: 2px solid #FAFAFA;
+  }
+}
