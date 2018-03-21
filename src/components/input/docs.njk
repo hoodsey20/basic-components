@@ -1,6 +1,5 @@
 {% set page = {
-  title: "input type='text'",
-  description: "Поля ввода"
+  title: "input[type='text']"
 } %}
 
 {% import "./templates.njk" as element %}
@@ -8,6 +7,18 @@
 {% extends fesg.components %}
 
 {% block body %}
+
+  {% section title="Input", description="Без модификаторов" %}
+    {{ element.input("Ваше имя") }}
+  {% code %}
+    {{ element.input("Ваше имя") }}
+  {% endsection %}
+
+  {% section title="Input[disabled]", description="Без модификаторов" %}
+    {{ element.input_disabled("Ваше имя") }}
+  {% code %}
+    {{ element.input_disabled("Ваше имя") }}
+  {% endsection %}
 
   {% section title="Clear", description="Без модификаторов" %}
     {{ element.clear("- кнопка") }}

@@ -1,7 +1,15 @@
+{% macro input (placeholder, modificator) %}
+  <input type="text" class="input" placeholder="{{ placeholder }}">
+{% endmacro %}
+
+{% macro input_disabled (placeholder, modificator) %}
+  <input type="text" class="input" placeholder="{{ placeholder }}" disabled>
+{% endmacro %}
+
 {% macro clear (name) %}
 <form action="" class="form">
   <div class="form__item">
-    <label class="form__label .form__label_border" >
+    <label class="form__label form__label_border" >
       <div class="form__inputName">Имя</div>
       <input type="text" class="input js_inputFill" placeholder="Например, Михаил" disabled>
     </label>

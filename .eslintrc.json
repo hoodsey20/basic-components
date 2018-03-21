@@ -7,6 +7,7 @@
     "plugin:testcafe/recommended"
   ],
   "rules": {
-    "no-warning-comments": "warn"
+    "no-warning-comments": "warn",
+    "semi": "off"
   }
 }
