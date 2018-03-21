@@ -1,0 +1,16 @@
+{% macro textarea (placeholder, modificator) %}
+  <textarea
+    class="textarea textarea_underlined"
+    rows="5"
+    placeholder="{{ placeholder }}"
+  ></textarea>
+{% endmacro %}
+
+{% macro textarea_disabled (placeholder, modificator) %}
+  <textarea
+    class="textarea textarea_underlined"
+    rows="5"
+    placeholder="{{ placeholder }}"
+    disabled
+  ></textarea>
+{% endmacro %}
