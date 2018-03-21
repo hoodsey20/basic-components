@@ -1,0 +1,28 @@
+$main: #2F80ED;
+$default: #C4C4C4;
+$text: #666;
+$background: #fff;
+
+.textarea {
+  box-sizing: border-box;
+  display: block;
+  border: 2px solid transparent;
+  padding: 14px 18px;
+  font-size: 14px;
+  background-color: $background;
+  color: $text;
+  resize: none;
+
+  &:focus {
+    border: 2px solid $main;
+    outline: none;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+textarea::-webkit-input-placeholder {
+  color: $default;
+}

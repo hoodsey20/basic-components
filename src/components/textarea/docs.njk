@@ -1,0 +1,24 @@
+{% set page = {
+  title: "textarea",
+  description: "дефолтная textarea"
+} %}
+
+{% import "./templates.njk" as element %}
+
+{% extends fesg.components %}
+
+{% block body %}
+
+  {% section title="textarea" %}
+    {{ element.textarea("Ваше имя") }}
+  {% code %}
+    {{ element.textarea("Ваше имя") }}
+  {% endsection %}
+
+  {% section title="textarea[disabled]" %}
+    {{ element.textarea_disabled("Ваше имя") }}
+  {% code %}
+    {{ element.textarea_disabled("Ваше имя") }}
+  {% endsection %}
+
+{% endblock %}
