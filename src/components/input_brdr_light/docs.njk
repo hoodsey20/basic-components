@@ -1,0 +1,24 @@
+{% set page = {
+  title: "input_brdr_light",
+  description: "input с рамкой радиусом 5px"
+} %}
+
+{% import "./templates.njk" as element %}
+
+{% extends fesg.components %}
+
+{% block body %}
+
+  {% section title="Input" %}
+    {{ element.input("Ваше имя") }}
+  {% code %}
+    {{ element.input("Ваше имя") }}
+  {% endsection %}
+
+  {% section title="Input[disabled]" %}
+    {{ element.input_disabled("Ваше имя") }}
+  {% code %}
+    {{ element.input_disabled("Ваше имя") }}
+  {% endsection %}
+
+{% endblock %}
