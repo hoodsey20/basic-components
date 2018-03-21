@@ -1,0 +1,7 @@
+{% macro input (placeholder, modificator) %}
+  <input type="text" class="input input_bgr" placeholder="{{ placeholder }}">
+{% endmacro %}
+
+{% macro input_disabled (placeholder, modificator) %}
+  <input type="text" class="input input_bgr" placeholder="{{ placeholder }}" disabled>
+{% endmacro %}
