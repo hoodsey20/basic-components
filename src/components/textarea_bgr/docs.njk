@@ -1,0 +1,24 @@
+{% set page = {
+  title: "textarea_bgr",
+  description: "textarea с фоном"
+} %}
+
+{% import "./templates.njk" as element %}
+
+{% extends fesg.components %}
+
+{% block body %}
+
+  {% section title="textarea_bgr" %}
+    {{ element.textarea("Ваше имя") }}
+  {% code %}
+    {{ element.textarea("Ваше имя") }}
+  {% endsection %}
+
+  {% section title="textarea_bgr[disabled]" %}
+    {{ element.textarea_disabled("Ваше имя") }}
+  {% code %}
+    {{ element.textarea_disabled("Ваше имя") }}
+  {% endsection %}
+
+{% endblock %}
