@@ -6,11 +6,14 @@ $checkMarkAreaSize: 15px;
 $checkMarkColor: #fff;
 $checkMarkTextSize: 10px;
 
+$textPadding: 5px;
+
 $color: #333;
 $textSize: 14px;
 
 .checkbox {
   display: inline-block;
+  font-size: 0;
   cursor: pointer;
   user-select: none;
 }
@@ -19,7 +22,7 @@ $textSize: 14px;
   display: inline-block;
   width: $checkMarkAreaSize;
   height: $checkMarkAreaSize;
-  vertical-align: middle;
+  vertical-align: top;
 
   font-size: 0;
   text-align: center;
@@ -45,8 +48,11 @@ $textSize: 14px;
 }
 
 .checkbox__text {
-  display: inline;
-  vertical-align: middle;
+  display: inline-block;
+  box-sizing: border-box;
+  width: calc(100% - #{$checkMarkAreaSize});
+  vertical-align: top;
+  padding-left: $textPadding;
   font-size: $textSize;
 }
 

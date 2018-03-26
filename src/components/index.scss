@@ -4,6 +4,10 @@ $tabletsPortraitScreen: 768px;
 $tabletsLandscapeScreen: 992px;
 $laptopsScreen: 1270px;
 
+* {
+  box-sizing: border-box;
+}
+
 @import "hello/styles";
 @import "image/styles";
 
