@@ -1,8 +1,8 @@
-{% macro clear (name) %}
-  <button class="button js-button">Кнопка {{ name }}</button>
+{% macro clear (name, modificator) %}
+  <button class="button {{ modificator }}">{{ name }}</button>
 {% endmacro %}
 
 
 {% macro link (name) %}
-  <a href="#" class="button js-button">Кнопка {{ name }}</a>
+  <a href="#" class="button js-button">{{ name }}</a>
 {% endmacro %}

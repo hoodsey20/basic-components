@@ -1,0 +1,20 @@
+{% set page = {
+  title: "form",
+  description: "форма"
+} %}
+
+{% import "./templates.njk" as form %}
+
+{% extends fesg.components %}
+
+{% block body %}
+
+  {% section title="form" %}
+    {{ form.form() }}
+  {% code %}
+    {{ form.form() }}
+  {% endsection %}
+
+
+
+{% endblock %}

@@ -1,6 +1,6 @@
 {% macro textarea (placeholder, modificator) %}
   <textarea
-    class="textarea"
+    class="textarea {{ modificator }}"
     rows="5"
     placeholder="{{ placeholder }}"
   ></textarea>

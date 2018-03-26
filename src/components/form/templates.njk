@@ -1,0 +1,41 @@
+{% import "../input/templates.njk" as input %}
+{% import "../textarea/templates.njk" as textarea %}
+{% import "../button/templates.njk" as button %}
+
+{% macro form (name) %}
+<form action="" method="post" class="form" style="max-width: 540px;">
+  <div class="form__wrap">
+    <div class="form__header">
+      <div class="form__title">Заказать звонок</div>
+      <div class="form_description">Заполните форму и мы с вами свяжемся</div>
+    </div>
+    <fieldset class="form__fieldset">
+      <legend class="form__legend">1. Личные данные</legend>
+      <div class="form__item">
+        <label class="form__label" for="name">Имя</label>
+        {{ input.input('Ваше имя', 'name') }}
+      </div>
+      <div class="form__item">
+        <label class="form__label" for="name">Фамилия</label>
+        {{ input.input('Например, Михаилов', 'lastname') }}
+      </div>
+    </fieldset>
+    <fieldset class="form__fieldset">
+      <legend class="form__legend">2. Контактные данные</legend>
+      <div class="form__item">
+        <label class="form__label" for="name">Телефон</label>
+        {{ input.input('+7 ___ ____ __ __', 'phone') }}
+      </div>
+      <div class="form__item">
+        <label class="form__label" for="name">Адрес</label>
+        {{ textarea.textarea('Например, Россия, г. Новосибирск, ул. Московская, 23, кв. 1') }}
+      </div>
+    </fieldset>
+    {{ button.clear('Заказать звонок', 'button_bgr button_brdr_light button_shdw') }}
+
+
+
+
+  </div>
+</form>
+{% endmacro %}

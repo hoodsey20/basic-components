@@ -1,3 +1,9 @@
+$minScreen: 320px;
+$phonesScreen: 480px;
+$tabletsPortraitScreen: 768px;
+$tabletsLandscapeScreen: 992px;
+$laptopsScreen: 1270px;
+
 @import "hello/styles";
 @import "image/styles";
 
@@ -36,3 +42,5 @@
 
 @import "select_custom/styles";
 @import "select_multiSelect/styles";
+
+@import "form/styles";

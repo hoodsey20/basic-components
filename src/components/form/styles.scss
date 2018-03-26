@@ -1,0 +1,81 @@
+$white: #fff;
+$bgr: #F7F7F7;
+$darkblue: #2361b2;
+$darkerblue: #1a4884;
+
+
+.form {
+  padding: 20px 25px;
+  background-color: $bgr;
+
+  @media screen and (min-width: $tabletsPortraitScreen) {
+    padding: 45px 60px 50px;
+  }
+}
+
+.form__header {
+  margin-bottom: 18px;
+
+  @media screen and (min-width: $tabletsPortraitScreen) {
+    margin-bottom: 25px;
+  }
+}
+
+.form__title {
+  font-size: 18px;
+  line-height: 25px;
+  font-weight: 500;
+
+  @media screen and (min-width: $tabletsPortraitScreen) {
+    font-size: 32px;
+    line-height: 44px;
+  }
+}
+
+.form_description {
+  font-size: 12px;
+  line-height: 16px;
+
+  @media screen and (min-width: $tabletsPortraitScreen) {
+    font-size: 14px;
+    line-height: 19px;
+  }
+}
+
+.form__fieldset {
+  padding: 0;
+  border: 0;
+  padding-left: 10px;
+}
+
+.form__fieldset + .form__fieldset {
+  margin-top: 5px;
+}
+
+.form__legend {
+  margin-bottom: 12px;
+  margin-left: -10px;
+  font-size: 16px;
+  line-height: 19px;
+
+  @media screen and (min-width: $tabletsPortraitScreen) {
+    margin-bottom: 14px;
+    font-size: 19px;
+    line-height: 22px;
+  }
+}
+
+.form__item {
+  margin-bottom: 15px;
+}
+
+.form__label {
+  display: block;
+  margin-bottom: 5px;
+  line-height: 1.5;
+  font-size: 12px;
+
+  @media screen and (min-width: $tabletsPortraitScreen) {
+    font-size: 14px;
+  }
+}
