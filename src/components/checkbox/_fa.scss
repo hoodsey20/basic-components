@@ -1,0 +1,7 @@
+.checkbox_fa {
+  .checkbox__input:checked + .checkbox__pseudo {
+    &:before {
+      content: "\f00c";
+    }
+  }
+}

@@ -1,6 +1,9 @@
 {% import "../input/templates.njk" as input %}
 {% import "../textarea/templates.njk" as textarea %}
 {% import "../button/templates.njk" as button %}
+{% import "../checkbox/templates.njk" as checkbox %}
+
+
 
 {% macro form (name) %}
 <form action="" method="post" class="form" style="max-width: 540px;">
@@ -31,7 +34,13 @@
         {{ textarea.textarea('Например, Россия, г. Новосибирск, ул. Московская, 23, кв. 1') }}
       </div>
     </fieldset>
-    {{ button.clear('Заказать звонок', 'button_bgr button_brdr_light button_shdw') }}
+    <div class="form__item">
+      {{ checkbox.clear("Согласен с условиями обработки персональных данных", "checkbox_fa", "fa") }}
+    </div>
+    <div class="form__item">
+      {{ button.clear('Заказать звонок', 'button_bgr button_brdr_light button_shdw') }}
+    </div>
+
 
 
 

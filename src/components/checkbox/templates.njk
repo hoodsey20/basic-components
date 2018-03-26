@@ -1,0 +1,7 @@
+{% macro clear (name, modificator, pseudoModificator) %}
+<label class="checkbox {{ modificator }}">
+  <input class="checkbox__input" name="name" type="checkbox" value="somevalue">
+  <span class="checkbox__pseudo {{ pseudoModificator }}"></span>
+  <span class="checkbox__text">{{ name }}</span>
+</label>
+{% endmacro %}
