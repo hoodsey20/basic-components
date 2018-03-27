@@ -26,6 +26,8 @@ $laptopsScreen: 1270px;
 @import "collapseCard/_bgr";
 @import "collapseCard/_underlined";
 
+@import "form/styles";
+
 @import "menuList/styles";
 @import "menuList_flat/styles";
 @import "menuList_flatHover/styles";
@@ -53,4 +55,4 @@ $laptopsScreen: 1270px;
 @import "select_custom/styles";
 @import "select_multiSelect/styles";
 
-@import "form/styles";
+@import "upload/styles";

@@ -1,0 +1,64 @@
+$colorBase: #DCDCDC;
+$colorActive: #2F80ED;
+
+.upload__input {
+  position: absolute;
+  overflow: hidden;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+}
+
+.upload__dropzone {
+  display: block;
+  max-width: 260px;
+  border: 2px dashed $colorBase;
+  padding: 50px 25px;
+  text-align: center;
+  cursor: pointer;
+
+  &:hover {
+    border-color: $colorActive;
+  }
+}
+
+.upload__previews {
+  margin-bottom: 10px;
+}
+
+.upload__input_dropable {
+  border-color: $colorActive;
+}
+
+.upload__badge {
+  position: relative;
+  display: block;
+  border: 0;
+  padding: 5px 0;
+  padding-left: 15px;
+
+  font-size: 14px;
+  background-color: transparent;
+  cursor: pointer;
+
+  &:before {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    content: '\f00d';
+    font-family: FontAwesome;
+    color: #ef2121;
+  }
+}
+
+.upload__badge_error {
+  color: #ef2121;
+}

@@ -1,0 +1,25 @@
+{% set page = {
+  title: "Upload",
+  description: "Инпут для загрузки файлов с поддержкой drag-n-drop функционала"
+} %}
+
+{% import "./templates.njk" as element %}
+
+{% extends fesg.components %}
+
+{% block body %}
+
+  {% section title="Upload" %}
+    Для неограчинного количества файлов (multiple):
+    {{ element.clear("png, jpg, jpeg, pdf", "multiple") }}
+    <br>
+    Для одного файла:
+    {{ element.clear("png, jpg, jpeg, pdf", "") }}
+  {% code %}
+    {{ element.clear("png, jpg, jpeg, pdf", "multiple") }}
+    {{ element.clear("png, jpg, jpeg, pdf", "") }}
+  {% endsection %}
+
+
+
+{% endblock %}

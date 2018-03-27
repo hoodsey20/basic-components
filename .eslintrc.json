@@ -9,5 +9,9 @@
   "rules": {
     "no-warning-comments": "warn",
     "semi": "off"
+  },
+  "globals": {
+    "Event": true,
+    "FileReader": true
   }
 }

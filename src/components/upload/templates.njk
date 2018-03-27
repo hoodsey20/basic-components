@@ -1,0 +1,9 @@
+{% macro clear (types, multiple) %}
+<div class="upload">
+  <div class="upload__wrap">
+    <div class="upload__previews"></div>
+    <input class="upload__input js-uploadinput" type="file" name="upload-file" id="file1{{multiple}}" data-types="{{types}}" {{multiple}}>
+    <label class="upload__dropzone js-dropzone" for="file1{{multiple}}">Загрузите или&nbsp;перетащите сюда файл</label>
+  </div>
+</div>
+{% endmacro %}
