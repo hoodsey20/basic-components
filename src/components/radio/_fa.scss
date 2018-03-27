@@ -1,0 +1,7 @@
+.radio_fa {
+  .radio__input:checked + .radio__pseudo {
+    &:before {
+      content: "\f00c";
+    }
+  }
+}

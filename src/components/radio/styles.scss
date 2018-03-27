@@ -1,0 +1,70 @@
+$bgr: #1a4884;
+$bgrActive: #2f80ed;
+
+$checkMarkAreaRadius: 50%;
+$checkMarkAreaSize: 15px;
+$checkMarkColor: #fff;
+$checkMarkTextSize: 10px;
+
+$textPadding: 5px;
+
+$color: #333;
+$textSize: 14px;
+
+.radio {
+  display: inline-block;
+  font-size: 0;
+  cursor: pointer;
+  user-select: none;
+}
+
+.radio__pseudo {
+  display: inline-block;
+  width: $checkMarkAreaSize;
+  height: $checkMarkAreaSize;
+  vertical-align: top;
+
+  font-size: 0;
+  text-align: center;
+
+  border-radius: $checkMarkAreaRadius;
+  background-color: $bgr;
+}
+
+.radio__input {
+  position: absolute;
+  overflow: hidden;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+}
+
+.radio__text {
+  display: inline-block;
+  box-sizing: border-box;
+  width: calc(100% - #{$checkMarkAreaSize});
+  vertical-align: top;
+  padding-left: $textPadding;
+  font-size: $textSize;
+}
+
+.radio__input:checked + .radio__pseudo {
+  background-color: $bgrActive;
+
+  &:before {
+    content: '\2713';
+    display: inline-block;
+    vertical-align: middle;
+    font-size: $checkMarkTextSize;
+    line-height: $checkMarkAreaSize;
+    color: $checkMarkColor;
+  }
+}

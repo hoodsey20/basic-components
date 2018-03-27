@@ -1,0 +1,12 @@
+{% macro clear (name, modificator, pseudoModificator) %}
+<label class="radio {{ modificator }}">
+  <input class="radio__input" name="{{name}}" type="radio" value="somevalue" checked>
+  <span class="radio__pseudo {{ pseudoModificator }}"></span>
+  <span class="radio__text">{{ name }}</span>
+</label>
+<label class="radio {{ modificator }}">
+  <input class="radio__input" name="{{name}}" type="radio" value="somevalue">
+  <span class="radio__pseudo {{ pseudoModificator }}"></span>
+  <span class="radio__text">{{ name }}</span>
+</label>
+{% endmacro %}
