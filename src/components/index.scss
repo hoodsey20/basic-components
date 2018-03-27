@@ -4,10 +4,6 @@ $tabletsPortraitScreen: 768px;
 $tabletsLandscapeScreen: 992px;
 $laptopsScreen: 1270px;
 
-* {
-  box-sizing: border-box;
-}
-
 @import "hello/styles";
 @import "image/styles";
 
@@ -25,6 +21,10 @@ $laptopsScreen: 1270px;
 @import "checkbox/_fa";
 
 @import "dropdownMenu/styles";
+
+@import "collapseCard/styles";
+@import "collapseCard/_bgr";
+@import "collapseCard/_underlined";
 
 @import "menuList/styles";
 @import "menuList_flat/styles";

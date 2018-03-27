@@ -1,0 +1,76 @@
+$angleColor: #3C88EE;
+
+.collapseCard_isClosed {
+  .collapseCard__body {
+    position: absolute;
+    overflow: hidden;
+
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+
+    white-space: nowrap;
+
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+  }
+
+  .collapseCard__up {
+    display: none;
+  }
+}
+
+.collapseCard_isOpen {
+  .collapseCard__down {
+    display: none;
+  }
+}
+
+.collapseCard__header {
+  padding: 10px 0;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  .collapseCard__wrap {
+    position: relative;
+    padding-right: 10px;
+
+    .fa {
+      position: absolute;
+      top: 0;
+      right: 0;
+      color: $angleColor;
+    }
+
+    .collapseCard__up {
+      top: 5px;
+    }
+
+    .collapseCard__down {
+      top: -3px;
+    }
+  }
+}
+
+.collapseCard__title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.collapseCard__body {
+  padding: 10px 0;
+}
+
+.collapseCard__text {
+  font-size: 14px;
+  font-weight: 400;
+
+  p {
+    margin-top: 0;
+  }
+}

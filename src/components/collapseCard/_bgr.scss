@@ -1,0 +1,12 @@
+$bgr: #FCFCFC;
+$paddingHorizontal: 15px;
+
+.collapseCard_bgr {
+  background-color: $bgr;
+
+  .collapseCard__header,
+  .collapseCard__body {
+    padding-right: $paddingHorizontal;
+    padding-left: $paddingHorizontal;
+  }
+}

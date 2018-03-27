@@ -1,5 +1,5 @@
-import './hello/scripts'
 import './button/scripts'
+import './collapseCard/scripts'
 import './dropdownMenu/scripts'
 import './menuList/scripts'
 import './tabs/scripts'

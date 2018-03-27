@@ -1,0 +1,26 @@
+{% set page = {
+  title: "collapseCard",
+  description: "Карточка, содержимое которой отображается/скрывается по нажатию на заголовок"
+} %}
+
+{% import "./templates.njk" as element %}
+
+{% extends fesg.components %}
+
+{% block body %}
+
+  {% section title="collapseCard" %}
+    {{ element.clear() }}
+  {% code %}
+    {{ element.clear() }}
+  {% endsection %}
+
+  {% section title="collapseCard_underlined" %}
+    {{ element.clear("collapseCard_underlined") }}
+  {% endsection %}
+
+  {% section title="collapseCard_bgr" %}
+    {{ element.clear("collapseCard_bgr") }}
+  {% endsection %}
+
+{% endblock %}
