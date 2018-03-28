@@ -3,7 +3,7 @@
   description: "звёздочки рейтинга: статика и с возможностью выбора"
 } %}
 
-{% import "./templates.njk" as button %}
+{% import "./templates.njk" as element %}
 
 {% extends fesg.components %}
 
@@ -11,12 +11,12 @@
 
   {% section title="starts" %}
     <h2>Без возможности взаимодействовать:</h2>
-    {{ button.bgr('1_', '', 'disabled') }}
+    {{ element.bgr('1_', '', 'disabled') }}
     <h2>Интерактивный:</h2>
-    {{ button.bgr('2_', 'stars_interactive') }}
+    {{ element.bgr('2_', 'stars_interactive') }}
   {% code %}
-    {{ button.bgr('1_', '', 'disabled') }}
-    {{ button.bgr('2_', 'stars_interactive') }}
+    {{ element.bgr('1_', '', 'disabled') }}
+    {{ element.bgr('2_', 'stars_interactive') }}
   {% endsection %}
 
 {% endblock %}

@@ -1,0 +1,49 @@
+{% import "../stars/templates.njk" as stars %}
+{% import "../counter/templates.njk" as counter %}
+{% import "../button/templates.njk" as button %}
+
+
+{% macro bgr (name) %}
+<div class="miniCard">
+  <div class="miniCard__wrap">
+
+    <div class="miniCard__imgContainer">
+      <a href="#" class="miniCard__imgLink">
+        <img
+          class="miniCard__img"
+          src="../assets/food-salad-healthy-lunch.jpg"
+          alt="{{name}}"
+        >
+      </a>
+      <div class="miniCard__stickersContainer">
+        <div class="miniCard__sticker sticker">
+          <span>-20%</span>
+        </div>
+        <div class="miniCard__sticker sticker">
+          <span>Хит</span>
+        </div>
+        <div class="miniCard__sticker sticker">
+          <span>Новинка</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="miniCard__contentContainer">
+      <div class="miniCard__contentWrap">
+        <div class="miniCard__name">{{name}}</div>
+        {{ stars.bgr('3_', 'miniCard__stars') }}
+        <div class="miniCard__priceContainer">
+          <del class="miniCard__oldPrice">47 970 руб.</del>
+          <ins class="miniCard__currentPrice">43 173 руб.</ins>
+        </div>
+        <div class="minCard__description">
+          <p>котлета, соус Чили мясной, соус Smoke, салат Айсберг, лечо из сладкого перца, сыр Чеддер, луковые кольца</p>
+        </div>
+        {{ counter.clear('minCard_counter') }}
+        {{ button.clear('В корзину', 'button_bgr') }}
+      </div>
+    </div>
+
+  </div>
+</div>
+{% endmacro %}

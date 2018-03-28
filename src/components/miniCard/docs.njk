@@ -1,0 +1,18 @@
+{% set page = {
+  title: "miniCard",
+  description: "Карточка товара в каталоге"
+} %}
+
+{% import "./templates.njk" as element %}
+
+{% extends fesg.components %}
+
+{% block body %}
+
+  {% section title="miniCard" %}
+    {{ element.bgr('БигБургер') }}
+  {% code %}
+    {{ element.bgr('БигБургер') }}
+  {% endsection %}
+
+{% endblock %}
