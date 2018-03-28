@@ -21,7 +21,13 @@
   color: #f90;
 }
 
+.stars label:hover,
+.stars label:hover ~ label {
+  cursor: default;
+}
+
 .stars_interactive label:hover,
 .stars_interactive label:hover ~ label {
   color: #fc0;
+  cursor: pointer;
 }
