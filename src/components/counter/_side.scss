@@ -1,0 +1,29 @@
+$buttonWidth: 50px;
+$inputHeight: 45px;
+
+.counter_side {
+  position: relative;
+  padding-right: $buttonWidth;
+
+  .counter__input {
+    height: $inputHeight;
+    line-height: $inputHeight;
+  }
+
+  .counter__button {
+    position: absolute;
+    right: 0;
+    width: $buttonWidth;
+    height: $inputHeight / 2;
+    line-height: $inputHeight / 2;
+    border: 1px solid #E0E0E0;
+  }
+
+  .counter__button[data-set=up] {
+    top: 0;
+  }
+
+  .counter__button[data-set=down] {
+    bottom: 0;
+  }
+}
