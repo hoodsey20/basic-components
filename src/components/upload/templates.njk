@@ -3,7 +3,17 @@
   <div class="upload__wrap">
     <div class="upload__previews"></div>
     <input class="upload__input js-uploadinput" type="file" name="upload-file" id="file1{{multiple}}" data-types="{{types}}" {{multiple}}>
-    <label class="upload__dropzone js-dropzone" for="file1{{multiple}}">Загрузите или&nbsp;перетащите сюда файл</label>
+    <label class="upload__dropzone js-dropzone" for="file1{{multiple}}">Выбрать файл</label>
+  </div>
+</div>
+{% endmacro %}
+
+{% macro button (types, multiple) %}
+<div class="upload upload_button">
+  <div class="upload__wrap">
+    <div class="upload__previews"></div>
+    <input class="upload__input js-uploadinput" type="file" name="upload-file" id="file2{{multiple}}" data-types="{{types}}" {{multiple}}>
+    <label class="upload__button button button_bgr js-dropzone" for="file2{{multiple}}">Выбрать файл</label>
   </div>
 </div>
 {% endmacro %}

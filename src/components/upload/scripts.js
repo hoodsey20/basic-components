@@ -85,6 +85,7 @@ dropZoneElements.forEach(function (element) {
 
 uploadInputElements.forEach(function (element) {
   var uploadParentElement = findAncestor(element, 'upload');
+  var isButtonType = uploadParentElement.classList.contains('upload_button');
   var typesList = element.getAttribute('data-types');
   var types = typesList.replace(/\s/g, '').split(',');
 
@@ -99,6 +100,22 @@ uploadInputElements.forEach(function (element) {
         createDocumentPreview(uploadedfiles[element], uploadParentElement, types);
       });
     }
-    uploadParentElement.querySelector('.upload__dropzone').classList.remove('upload__input_dropable');
+
+    setTimeout(function () {
+      if (isButtonType) {
+        var buttonElement = uploadParentElement.querySelector('.upload__button');
+        var isBadgesExists = uploadParentElement.querySelectorAll('.upload__badge').length;
+
+        if (isBadgesExists && element.multiple) {
+          buttonElement.textContent = 'Выбрать ещё файл';
+        } else if (isBadgesExists && !element.multiple) {
+          buttonElement.textContent = 'Заменить файл другим';
+        } else {
+          buttonElement.textContent = 'Выбрать файл';
+        }
+      } else {
+        uploadParentElement.querySelector('.upload__dropzone').classList.remove('upload__input_dropable');
+      }
+    }, 1000);
   });
 });

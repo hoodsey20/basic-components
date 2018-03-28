@@ -1,0 +1,7 @@
+.upload__button {
+  &:before {
+    padding-right: 10px;
+    font-family: FontAwesome;
+    content: '\f0c6';
+  }
+}

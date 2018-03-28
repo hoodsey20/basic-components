@@ -20,6 +20,16 @@
     {{ element.clear("png, jpg, jpeg, pdf", "") }}
   {% endsection %}
 
+  {% section title="Upload_button" %}
+    Для неограчинного количества файлов (multiple):
+    {{ element.button("png, jpg, jpeg, pdf", "multiple") }}
+    <br>
+    Для одного файла:
+    {{ element.button("png, jpg, jpeg, pdf", "") }}
+  {% code %}
+    {{ element.button("png, jpg, jpeg, pdf", "multiple") }}
+    {{ element.button("png, jpg, jpeg, pdf", "") }}
+  {% endsection %}
 
 
 {% endblock %}
