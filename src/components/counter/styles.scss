@@ -1,0 +1,47 @@
+$buttonTextColor: #fff;
+$buttonBackgroundColor: #0096d8;
+$fontSize: 16px;
+$size: 37px;
+$inputTextColor: #333;
+$inputWidth: 55px;
+$inputBackgroundColor: #E0E0E0;
+
+.counter {
+  display: inline-block;
+  font-size: 0;
+}
+
+.counter__button {
+  border: 0;
+  vertical-align: middle;
+  width: $size;
+  height: $size;
+  padding: 0;
+  font-size: $fontSize;
+  line-height: $size;
+  color: $buttonTextColor;
+  background-color: $buttonBackgroundColor;
+  border-radius: 0;
+}
+
+.counter__input {
+  display: inline-block;
+  vertical-align: middle;
+  width: $inputWidth;
+  height: $size;
+  border: 0;
+  padding: 0;
+  font-size: $fontSize;
+  line-height: $size;
+  text-align: center;
+  background-color: $inputBackgroundColor;
+  color: $inputTextColor;
+}
+
+.counter__input::-webkit-inner-spin-button,
+.counter__input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}

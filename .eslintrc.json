@@ -8,7 +8,8 @@
   ],
   "rules": {
     "no-warning-comments": "warn",
-    "semi": "off"
+    "semi": "off",
+    "no-debugger": "off"
   },
   "globals": {
     "Event": true,

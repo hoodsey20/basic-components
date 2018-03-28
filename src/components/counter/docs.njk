@@ -1,0 +1,16 @@
+{% set page = {
+  title: "Counter",
+  description: "Счётчик количества товаров"
+} %}
+
+{% import "./templates.njk" as element %}
+
+{% extends fesg.components %}
+
+{% block body %}
+  {% section title="Counter" %}
+    {{ element.clear('') }}
+  {% code %}
+    {{ element.clear('') }}
+  {% endsection %}
+{% endblock %}
