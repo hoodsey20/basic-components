@@ -1,0 +1,22 @@
+{% set page = {
+  title: "starts",
+  description: "звёздочки рейтинга: статика и с возможностью выбора"
+} %}
+
+{% import "./templates.njk" as button %}
+
+{% extends fesg.components %}
+
+{% block body %}
+
+  {% section title="starts" %}
+    <h2>Без возможности взаимодействовать:</h2>
+    {{ button.bgr('1_', '', 'disabled') }}
+    <h2>Интерактивный:</h2>
+    {{ button.bgr('2_', 'stars_interactive') }}
+  {% code %}
+    {{ button.bgr('1_', '', 'disabled') }}
+    {{ button.bgr('2_', 'stars_interactive') }}
+  {% endsection %}
+
+{% endblock %}

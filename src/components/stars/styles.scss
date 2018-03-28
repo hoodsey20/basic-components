@@ -1,0 +1,27 @@
+.stars {
+  display: flex;
+  flex-direction: row-reverse;
+  font-size: 1.5em;
+  justify-content: space-around;
+  padding: 0 0.2em;
+  text-align: center;
+  width: 5em;
+}
+
+.stars input {
+  display: none;
+}
+
+.stars label {
+  color: #ccc;
+  cursor: pointer;
+}
+
+.stars :checked ~ label {
+  color: #f90;
+}
+
+.stars_interactive label:hover,
+.stars_interactive label:hover ~ label {
+  color: #fc0;
+}
