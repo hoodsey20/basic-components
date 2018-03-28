@@ -1,0 +1,29 @@
+$colorBase: #666;
+$colorHover: #2F80ED;
+$colorCurrent: #C4C4C4;
+
+.breadcrumbs__listItem {
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.breadcrumbs__link {
+  text-decoration: none;
+
+  color: $colorBase;
+
+  &:after {
+    content: '→';
+    padding: 0 0.25em 0 0.5em;
+  }
+
+  &:hover {
+    color: $colorHover;
+  }
+}
+
+.breadcrumbs__currentItem {
+  color: $colorCurrent;
+}

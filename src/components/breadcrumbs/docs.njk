@@ -1,0 +1,18 @@
+{% set page = {
+  title: "Breadcrumbs",
+  description: "Хлебные крошки"
+} %}
+
+{% import "./templates.njk" as element %}
+
+{% extends fesg.components %}
+
+{% block body %}
+
+  {% section title="Breadcrumbs" %}
+    {{ element.bgr() }}
+  {% code %}
+    {{ element.bgr() }}
+  {% endsection %}
+
+{% endblock %}
