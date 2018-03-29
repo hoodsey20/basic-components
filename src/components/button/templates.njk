@@ -1,8 +1,19 @@
 {% macro clear (name, modificator) %}
-  <button class="button {{ modificator }}">{{ name }}</button>
+<button class="button {{modificator}}">{{ name }}</button>
 {% endmacro %}
 
+{% macro link (name, modificator) %}
+<a href="#" class="button {{modificator}}">{{ name }}</a>
+{% endmacro %}
 
-{% macro link (name) %}
-  <a href="#" class="button js-button">{{ name }}</a>
+{% macro icon_after (name, modificator) %}
+<button class="button button_icon_after {{modificator}}">
+  {{ name }}<i class="fa fa-play" aria-hidden="true"></i>
+</button>
+{% endmacro %}
+
+{% macro icon_before (name, modificator) %}
+<button class="button button_icon_before {{modificator}}">
+  <i class="fa fa-play" aria-hidden="true"></i>{{ name }}
+</button>
 {% endmacro %}

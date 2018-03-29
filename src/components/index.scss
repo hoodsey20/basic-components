@@ -10,14 +10,13 @@ $laptopsScreen: 1270px;
 @import "breadcrumbs/styles";
 
 @import "button/styles";
-@import "button_bgr/styles";
-@import "button_brdr/styles";
-@import "button_shdw/styles";
-@import "button_brdr_light/styles";
-@import "button_brdr_strong/styles";
-@import "button_icon_after/styles";
-@import "button_icon_before/styles";
-@import "button_circle/styles";
+@import "button/_bgr";
+@import "button/_brdr";
+@import "button/_radius";
+@import "button/_circle";
+@import "button/_shdw";
+@import "button/_icon_after";
+@import "button/_icon_before";
 
 @import "checkbox/styles";
 @import "checkbox/_fa";

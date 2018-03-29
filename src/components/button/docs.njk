@@ -9,16 +9,45 @@
 
 {% block body %}
 
-  {% section title="Clear", description="Без модификаторов" %}
-    {{ button.clear("- кнопка") }}
+  {% section title="Кнопка" %}
+    {{ button.clear('Добавить в корзину') }}
+    <br>
+    <br>
+    {{ button.clear('Добавить в корзину', 'button_bgr') }}
+    <br>
+    <br>
+    {{ button.clear('Добавить в корзину', 'button_brdr') }}
+    <br>
+    <br>
+    {{ button.clear('Добавить в корзину', 'button_brdr button_radius') }}
+    <br>
+    <br>
+    {{ button.clear('OK', 'button_brdr button_circle') }}
+    <br>
+    <br>
+    {{ button.clear('Добавить в корзину', 'button_bgr button_shdw') }}
+    <br>
+    <br>
+    {{ button.icon_after('Добавить в корзину', 'button_bgr') }}
+    <br>
+    <br>
+    {{ button.icon_before('Добавить в корзину', 'button_bgr') }}
+
+
   {% code %}
-    {{ button.clear("- кнопка") }}
+    {{ button.clear('Добавить в корзину') }}
+    {{ button.clear('Добавить в корзину', 'button_bgr') }}
+    {{ button.clear('Добавить в корзину', 'button_brdr') }}
+    {{ button.clear('Добавить в корзину', 'button_brdr button_radius') }}
+    {{ button.clear('Добавить в корзину', 'button_bgr button_shdw') }}
+    {{ button.icon_after('Добавить в корзину', 'button_bgr') }}
+    {{ button.icon_before('Добавить в корзину', 'button_bgr') }}
   {% endsection %}
 
   {% section title="ссылка с видом кнопки" %}
-    {{ button.link("- ссылка") }}
+    {{ button.link('Ссылка с видом кнопки', 'button_bgr') }}
   {% code %}
-    {{ button.link("- ссылка") }}
+    {{ button.link('Ссылка с видом кнопки', 'button_bgr') }}
   {% endsection %}
 
 

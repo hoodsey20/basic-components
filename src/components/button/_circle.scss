@@ -1,9 +1,10 @@
+$size: 80px;
+
 .button_circle {
-  min-width: 80px;
+  width: $size;
   padding: 0 2px;
 
-  line-height: 80px;
+  height: $size;
 
   border-radius: 50%;
 }
-
