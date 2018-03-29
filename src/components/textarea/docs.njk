@@ -1,6 +1,5 @@
 {% set page = {
-  title: "textarea",
-  description: "дефолтная textarea"
+  title: "textarea"
 } %}
 
 {% import "./templates.njk" as element %}
@@ -10,9 +9,22 @@
 {% block body %}
 
   {% section title="textarea" %}
+    <h2>Дефолтная</h2>
     {{ element.textarea("Ваше имя") }}
+    <h2>textarea_bgr</h2>
+    {{ element.textarea('Ваше имя', 'textarea_bgr') }}
+    <h2>textarea_brdr</h2>
+    {{ element.textarea('Ваше имя', 'textarea_brdr') }}
+    <h2>textarea_radius</h2>
+    {{ element.textarea('Ваше имя', 'textarea_bgr textarea_radius') }}
+    <h2>textarea_underlined</h2>
+    {{ element.textarea('Ваше имя', 'textarea_underlined') }}
   {% code %}
     {{ element.textarea("Ваше имя") }}
+    {{ element.textarea('Ваше имя', 'textarea_bgr') }}
+    {{ element.textarea('Ваше имя', 'textarea_brdr') }}
+    {{ element.textarea('Ваше имя', 'textarea_bgr textarea_radius') }}
+    {{ element.textarea('Ваше имя', 'textarea_underlined') }}
   {% endsection %}
 
   {% section title="textarea[disabled]" %}

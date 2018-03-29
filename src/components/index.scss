@@ -56,11 +56,10 @@ $laptopsScreen: 1270px;
 @import "tabs_vertical/styles";
 
 @import "textarea/styles";
-@import "textarea_underlined/styles";
-@import "textarea_brdr/styles";
-@import "textarea_brdr_light/styles";
-@import "textarea_brdr_strong/styles";
-@import "textarea_bgr/styles";
+@import "textarea/_bgr";
+@import "textarea/_brdr";
+@import "textarea/_radius";
+@import "textarea/_underlined";
 
 @import "select_custom/styles";
 @import "select_multiSelect/styles";
