@@ -33,11 +33,12 @@ $laptopsScreen: 1270px;
 @import "form/styles";
 
 @import "input/styles";
-@import "input_bgr/styles";
-@import "input_underlined/styles";
-@import "input_brdr/styles";
-@import "input_brdr_light/styles";
-@import "input_brdr_strong/styles";
+@import "input/_bgr";
+
+@import "input/_bgr";
+@import "input/_brdr";
+@import "input/_radius";
+@import "input/_underlined";
 
 @import "menuList/styles";
 @import "menuList_flat/styles";

@@ -11,8 +11,24 @@
 
   {% section title="Input" %}
     {{ element.input("Ваше имя") }}
+    <br>
+    <br>
+    {{ element.input('Ваше имя', '1', 'input_bgr') }}
+    <br>
+    <br>
+    {{ element.input('Ваше имя', '1', 'input_brdr') }}
+    <br>
+    <br>
+    {{ element.input('Ваше имя', '1', 'input_bgr input_radius') }}
+    <br>
+    <br>
+    {{ element.input('Ваше имя', '1', 'input_underlined') }}
   {% code %}
     {{ element.input("Ваше имя") }}
+    {{ element.input('Ваше имя', '1', 'input_bgr') }}
+    {{ element.input('Ваше имя', '1', 'input_brdr') }}
+    {{ element.input('Ваше имя', '1', 'input_bgr input_radius') }}
+    {{ element.input('Ваше имя', '1', 'input_underlined') }}
   {% endsection %}
 
   {% section title="Input[disabled]" %}
