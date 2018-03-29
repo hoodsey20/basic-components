@@ -32,16 +32,6 @@ $laptopsScreen: 1270px;
 
 @import "form/styles";
 
-@import "menuList/styles";
-@import "menuList_flat/styles";
-@import "menuList_flatHover/styles";
-
-@import "radio/styles";
-@import "radio/_fa";
-
-@import "tabs/styles";
-@import "tabs_vertical/styles";
-
 @import "input/styles";
 @import "input_bgr/styles";
 @import "input_underlined/styles";
@@ -49,9 +39,20 @@ $laptopsScreen: 1270px;
 @import "input_brdr_light/styles";
 @import "input_brdr_strong/styles";
 
+@import "menuList/styles";
+@import "menuList_flat/styles";
+@import "menuList_flatHover/styles";
+
 @import "miniCard/styles";
+@import "miniCard/_default";
+
+@import "radio/styles";
+@import "radio/_fa";
 
 @import "stars/styles";
+
+@import "tabs/styles";
+@import "tabs_vertical/styles";
 
 @import "textarea/styles";
 @import "textarea_underlined/styles";

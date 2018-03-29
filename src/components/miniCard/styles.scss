@@ -1,4 +1,4 @@
-$imgHeight: 200px;
+$imgHeight: 280px;
 
 $quickViewBackground: rgba(3, 3, 3, 0.6);
 $quickViewColor: #fff;
@@ -38,14 +38,15 @@ $handlerIconSize: 22px;
   position: absolute;
   top: 0;
   left: 0;
-  display: flex;
-  justify-content: flex-start;
+  font-size: 0;
 }
 
 .miniCard__sticker {
   display: inline-block;
   margin-right: 10px;
   padding: 10px;
+  font-size: 14px;
+  line-height: 1;
   background-color: #fff;
 }
 
@@ -118,4 +119,8 @@ $handlerIconSize: 22px;
   .fa-heart {
     color: #DE2626;
   }
+}
+
+.miniCard__name {
+  display: block;
 }

@@ -26,6 +26,7 @@
     "selector-no-vendor-prefix": null,
     "scss/at-import-no-partial-leading-underscore": null,
     "scss/at-extend-no-missing-placeholder": null,
-    "property-no-vendor-prefix": null
+    "property-no-vendor-prefix": null,
+    "color-hex-length": null
   }
 }

@@ -3,8 +3,8 @@
 {% import "../button/templates.njk" as button %}
 
 
-{% macro clear (name, src) %}
-<div class="miniCard">
+{% macro clear (name, src, modificator) %}
+<div class="miniCard {{modificator}}">
   <div class="miniCard__wrap">
 
     <div class="miniCard__imgContainer">
@@ -27,14 +27,14 @@
       </div>
 
       <div class="miniCard__stickersContainer">
-        <div class="miniCard__sticker">
+        <div class="miniCard__sticker miniCard__sticker_sale">
           <span>-20%</span>
         </div>
-        <div class="miniCard__sticker">
+        <div class="miniCard__sticker miniCard__sticker_hit">
           <span>Хит</span>
         </div>
-        <div class="miniCard__sticker">
-          <span>Новинка</span>
+        <div class="miniCard__sticker miniCard__sticker_new">
+          <span>New</span>
         </div>
       </div>
 
@@ -59,33 +59,42 @@
 
     <div class="miniCard__contentContainer">
       <div class="miniCard__contentWrap">
-        <div class="miniCard__name">{{name}}</div>
-        {{ stars.bgr('3_', 'miniCard__stars') }}
+        <a href="#" class="miniCard__name">{{name}}</a>
+        <div class="miniCard__vendorCode">Артикул: 9908245</div>
+        <div class="minicard__starsContainer">
+          {{ stars.bgr('3_', 'miniCard__stars') }}
+        </div>
         <div class="miniCard__priceContainer">
-          <del class="miniCard__oldPrice">47 970 руб.</del>
           <ins class="miniCard__currentPrice">43 173 руб.</ins>
+          <del class="miniCard__oldPrice">47 970 руб.</del>
         </div>
         <div class="minCard__description">
-          <p>котлета, соус Чили мясной, соус Smoke, салат Айсберг, лечо из сладкого перца, сыр Чеддер, луковые кольца</p>
+          котлета, соус Чили мясной, соус Smoke, салат Айсберг, лечо из сладкого перца, сыр Чеддер, луковые кольца
         </div>
-        {{ counter.clear('minCard_counter') }}
-        {{ button.clear('В корзину', 'button_bgr') }}
+
+        <div class="minCard__data">
+          <div class="minCard__dataItem">
+            <span class="minCard__dataItemName">Размер:</span>
+            <span class="minCard__dataItemValue">20х8 см</span>
+          </div>
+          <div class="minCard__dataItem">
+            <span class="minCard__dataItemName">Вес:</span>
+            <span class="minCard__dataItemValue">350 г</span>
+          </div>
+          <div class="minCard__dataItem">
+            <span class="minCard__dataItemName">Цвет:</span>
+            <span class="minCard__dataItemValue">синий</span>
+          </div>
+        </div>
+
+        <div class="minCard__orderActionContainer">
+          {{ counter.clear('minCard_counter') }}
+          {{ button.clear('В корзину', 'button_brdr button_radius') }}
+        </div>
+
+        {{ button.clear('Купить в 1 клик', 'button_bgr button_radius miniCard__wildButton') }}
       </div>
 
-      <div class="minCard__data">
-        <div class="minCard__dataItem">
-          <span class="minCard__dataItemName">Размер:</span>
-          <span class="minCard__dataItemValue">20х8 см</span>
-        </div>
-        <div class="minCard__dataItem">
-          <span class="minCard__dataItemName">Вес:</span>
-          <span class="minCard__dataItemValue">350 г</span>
-        </div>
-        <div class="minCard__dataItem">
-          <span class="minCard__dataItemName">Цвет:</span>
-          <span class="minCard__dataItemValue">синий</span>
-        </div>
-      </div>
     </div>
 
   </div>

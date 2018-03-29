@@ -1,0 +1,98 @@
+.miniCard_default {
+  .miniCard__sticker {
+    display: block;
+    margin-right: 0;
+    width: 50px;
+    height: 36px;
+
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-align: center;
+
+    color: #fff;
+    background-color: #2f80ed;
+  }
+
+  .miniCard__sticker_sale {
+    background: #DE2626;
+  }
+
+  .miniCard__sticker_hit {
+    background: #3E6EB5;
+  }
+
+  .miniCard__sticker_new {
+    background: #3EB56D;
+  }
+
+  .miniCard__contentContainer {
+    padding: 10px 0;
+  }
+
+  .miniCard__contentWrap {
+    font-size: 16px;
+  }
+
+  .miniCard__name {
+    margin-bottom: 0.3rem;
+
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+
+    color: #666;
+  }
+
+  .miniCard__vendorCode {
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+    color: #BDBDBD;
+  }
+
+  .minicard__starsContainer {
+    margin-bottom: 0.5rem;
+  }
+
+  .miniCard__currentPrice {
+    font-size: 1.25rem;
+    text-decoration: none;
+    color: #357AB1;
+  }
+
+  .miniCard__oldPrice {
+    font-size: 0.875rem;
+    text-decoration-line: strikethrough;
+    color: #C4C4C4;
+  }
+
+  .minCard__description {
+    padding: 0.5rem 0;
+    font-size: 0.875rem;
+    color: #666666;
+  }
+
+  .minCard__dataItem {
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  .minCard__dataItemName {
+    color: #BDBDBD;
+  }
+
+  .minCard__dataItemValue {
+    color: #666;
+  }
+
+  .minCard__orderActionContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.9rem 0;
+  }
+
+  .miniCard__wildButton {
+    display: block;
+    width: 100%;
+  }
+}
