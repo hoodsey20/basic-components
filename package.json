@@ -43,7 +43,8 @@
   },
   "dependencies": {
     "jquery": "^3.2.1",
-    "normalize.css": "^7.0.0"
+    "normalize.css": "^7.0.0",
+    "object-fit-images": "^3.2.3"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.6",

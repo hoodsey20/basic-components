@@ -3,7 +3,7 @@
 {% import "../button/templates.njk" as button %}
 
 
-{% macro bgr (name) %}
+{% macro clear (name, src) %}
 <div class="miniCard">
   <div class="miniCard__wrap">
 
@@ -11,7 +11,7 @@
       <a href="#" class="miniCard__imgLink">
         <img
           class="miniCard__img"
-          src="../assets/food-salad-healthy-lunch.jpg"
+          src="{{src}}"
           alt="{{name}}"
         >
       </a>

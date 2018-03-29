@@ -10,9 +10,12 @@
 {% block body %}
 
   {% section title="miniCard" %}
-    {{ element.bgr('БигБургер') }}
+    {{ element.clear('БигБургер', '../assets/food-salad-healthy-lunch.jpg') }}
+    {{ element.clear('Много разных острых и терпких специй', '../assets/spices.jpeg') }}
+    {{ element.clear('Салат из яиц, огурцов, моркови, капусты, соли, перца, оливкового масла', '../assets/salad.jpeg') }}
+
   {% code %}
-    {{ element.bgr('БигБургер') }}
+    {{ element.clear('БигБургер') }}
   {% endsection %}
 
 {% endblock %}

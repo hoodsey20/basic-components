@@ -1,4 +1,8 @@
+$imgHeight: 200px;
+
 .miniCard {
+  display: inline-block;
+  vertical-align: top;
   min-width: 250px;
   max-width: 300px;
 }
@@ -9,10 +13,15 @@
 
 .miniCard__imgLink {
   display: block;
-  max-width: 100%;
+  overflow: hidden;
+  height: $imgHeight;
+  width: 100%;
   font-size: 0;
 }
 
 .miniCard__img {
-  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  font-family: 'object-fit: cover;';
 }
