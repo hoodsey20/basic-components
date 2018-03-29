@@ -9,6 +9,7 @@ $imgHeight: 200px;
 
 .miniCard__imgContainer {
   position: relative;
+  overflow: hidden;
 }
 
 .miniCard__imgLink {
@@ -24,4 +25,40 @@ $imgHeight: 200px;
   height: 100%;
   object-fit: cover;
   font-family: 'object-fit: cover;';
+}
+
+.miniCard__stickersContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.miniCard__sticker {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 10px;
+  background-color: #fff;
+}
+
+.miniCard__quickViewOverlay {
+  position: absolute;
+  left: 0;
+  bottom: -100%;
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.6);
+  transition: all 0.6s linear;
+}
+
+.miniCard__imgContainer:hover {
+  .miniCard__quickViewOverlay {
+    bottom: 0;
+  }
+}
+
+.miniCard_quickViewIcon {
+  font-size: 30px;
 }
