@@ -25,4 +25,58 @@
 <div>
   <input type="text" name="{{id}}_start" value="">
 </div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function () {
+  setTimeout(function() {
+    /// инициализация
+    var singleRoller = document.getElementById('singleRoller');
+    var singleRollerInput = document.querySelector('[name=singleRoller_start]');
+
+    var moveHandler = function (val1, val2, input) {
+      singleRollerInput.value = val1 + '/' + val2;
+    };
+
+    var mouseUpHandler = function (val1, val2, input) {
+      console.log('onMouseUp');
+    };
+
+    var singleRollerProps = {
+      parentElement: singleRoller,
+      minValue: 200,
+      maxValue: 8000,
+      step: 200,
+      onMove: moveHandler,
+      onMouseUp: mouseUpHandler
+    };
+    window.roller(singleRollerProps);
+
+    // инициализация двойного ролика
+
+    var doubleRoller = document.getElementById('doubleRoller');
+    var doubleRollerInput = document.querySelector('[name=doubleRoller_start]');
+
+    var moveHandler2 = function (val1, val2, input) {
+      console.log('moveHandler2', val1, val2, input);
+      doubleRollerInput.value = val1 + '/' + val2;
+    };
+
+    var mouseUpHandler2 = function (val1, val2, input) {
+      console.log('onMouseUp2');
+    };
+
+    var doubleRollerProps = {
+      parentElement: doubleRoller,
+      minValue: 0,
+      maxValue: 8000,
+      secondRoller: true,
+      startValue: 400,
+      endValue: 5000,
+      step: 700,
+      onMove: moveHandler2,
+      onMouseUp: mouseUpHandler2
+    };
+    window.roller(doubleRollerProps);
+  }, 2000);
+});
+</script>
 {% endmacro %}

@@ -15,6 +15,7 @@ window.roller = function (params) {
   var roller2position = 0;
   var value1 = min;
   var value2 = max;
+  var step = params.step || (max - min) / 20;
   // разница между максимальным и минимальным значением на оси X
   var differenceValue = max - min;
   var shaftIndicatorFromLeft = 0;
@@ -27,30 +28,40 @@ window.roller = function (params) {
   var gap = params.gap || defaultGap;
   var procentGap = Math.floor((gap * 100) / (max - min));
 
-  var roundOff = function (val) {
-    var numberTail = val % params.step;
-    var MATH_ERROR = 5;
-    if (numberTail < val / MATH_ERROR) {
-      val = val - numberTail;
-    }
-
-    if (val > max) {
-      val = max;
-    }
-
-    return val;
-  };
-
-  if (params.secondRoller === true && rollerParent.querySelectorAll('.roller__circle').length > 1) {
+  if (!!params.secondRoller && rollerParent.querySelectorAll('.roller__circle').length > 1) {
     var roller2 = rollerParent.querySelectorAll('.roller__circle')[1];
     roller2Exist = true;
   }
+
+  var roundOff = function (val) {
+    var value = Number(val);
+
+    if (value === step) return value;
+    var numberTail = value % step;
+
+    if (value === numberTail) {
+      if (value > step / 2) {
+        value = step;
+      } else {
+        value = min;
+      }
+      return value;
+    }
+
+    if (value > numberTail) {
+      value = value - numberTail;
+
+      if (value > max || value + numberTail >= max) {
+        value = max;
+      }
+      return value;
+    }
+  };
 
   function move (pointerPosition, target) {
     var maxRight = rollerParent.offsetWidth;
     var percent = 0;
     var parentDistance = rollerParent.getBoundingClientRect();
-
     if (!roller2Exist) {
       // значение ширины оси
       var rollerPosition = pointerPosition - parentDistance.left;
@@ -65,11 +76,7 @@ window.roller = function (params) {
       roller.style.left = percent + '%';
 
       value1 = ((percent * differenceValue / 100) + min).toFixed(0);
-
-      // если установлен шаг
-      if (params.step) {
-        value1 = roundOff(value1);
-      }
+      value1 = roundOff(value1);
 
       if (shaftIndicator) {
         shaftIndicator.style.width = 100 - percent + '%';
@@ -102,10 +109,7 @@ window.roller = function (params) {
         if (percent + roller2position <= 100 - procentGap) {
           roller.style.left = percent + '%';
           value1 = ((percent * differenceValue / 100) + min).toFixed(0);
-
-          if (params.step) {
-            value1 = roundOff(value1);
-          }
+          value1 = roundOff(value1);
 
           if (shaftIndicator) {
             shaftIndicatorFromLeft = percent;
@@ -120,10 +124,7 @@ window.roller = function (params) {
         if ((100 - percent) + roller1position <= 100 - procentGap) {
           roller2.style.right = (100 - percent) + '%';
           value2 = ((percent * differenceValue / 100) + min).toFixed(0);
-
-          if (params.step) {
-            value2 = roundOff(value2);
-          }
+          value2 = roundOff(value2);
 
           if (shaftIndicator) {
             shaftIndicatorFromRight = (100 - percent);
@@ -206,41 +207,3 @@ window.roller = function (params) {
     touchListener(roller2);
   }
 };
-
-/// инициализация
-var singleRoller = document.getElementById('singleRoller');
-var singleRollerInput = document.querySelector('[name=singleRoller_start]');
-
-var moveHandler = function (val1, val2, input) {
-  singleRollerInput.value = val1 + '/' + val2;
-};
-
-var mouseUpHandler = function (val1, val2, input) {
-  console.log('onMouseUp');
-};
-
-var singleRollerProps = {
-  parentElement: singleRoller,
-  minValue: 200,
-  maxValue: 8000,
-  step: 200,
-  onMove: moveHandler,
-  onMouseUp: mouseUpHandler
-};
-window.roller(singleRollerProps);
-
-// инициализация двойного ролика
-
-var doubleRoller = document.getElementById('doubleRoller');
-
-var doubleRollerProps = {
-  parentElement: doubleRoller,
-  minValue: 200,
-  maxValue: 8000,
-  secondRoller: true,
-  roller1position: 1000,
-  roller2position: 5000,
-  step: 200
-};
-
-window.roller(doubleRollerProps);

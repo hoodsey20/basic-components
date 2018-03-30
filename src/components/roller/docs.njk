@@ -16,30 +16,6 @@
 {{ element.two('doubleRoller') }}
 {% code %}
 {{ element.one('singleRoller') }}
-пример инициализации:
-
-<script>
-var singleRoller = document.getElementById('singleRoller');
-var singleRollerInput = document.querySelector('[name=singleRoller_start]');
-
-var moveHandler = function (val1, val2, input) {
-  singleRollerInput.value = val1 + '/' + val2;
-};
-
-var mouseUpHandler = function (val1, val2, input) {
-  console.log('onMouseUp');
-};
-
-var singleRollerProps = {
-  parentElement: singleRoller,
-  minValue: 200,
-  maxValue: 8500,
-  step: 277,
-  onMove: moveHandler,
-  onMouseUp: mouseUpHandler
-};
-window.roller(singleRollerProps);
-</script>
 {% endsection %}
 
 {% endblock %}
