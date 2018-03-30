@@ -9,10 +9,23 @@
 
 {% block body %}
 
-  {% section title="Clear", description="Без модификаторов" %}
-    {{ element.clear("- кнопка") }}
+  {% section title="dropdownMenu" %}
+    <h2>С заголовком</h2>
+    {{ element.clear() }}
+    <h2>Без модификаторов</h2>
+    {{ element.noheader() }}
+    <h2>_brdr</h2>
+    {{ element.noheader('dropdownMenu_brdr') }}
+    <h2>_underlined</h2>
+    {{ element.noheader('dropdownMenu_underlined') }}
+    <h2>_bgr</h2>
+    {{ element.noheader('dropdownMenu_bgr') }}
   {% code %}
-    {{ element.clear("- кнопка") }}
+    {{ element.clear() }}
+    {{ element.noheader() }}
+    {{ element.noheader('dropdownMenu_brdr') }}
+    {{ element.noheader('dropdownMenu_underlined') }}
+    {{ element.noheader('dropdownMenu_bgr') }}
   {% endsection %}
 
 {% endblock %}

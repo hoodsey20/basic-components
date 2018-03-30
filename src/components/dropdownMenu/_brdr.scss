@@ -1,0 +1,7 @@
+$borderColor: #E0E0E0;
+
+.dropdownMenu_brdr {
+  .dropdownMenu__currentValue {
+    border: 2px solid $borderColor;
+  }
+}

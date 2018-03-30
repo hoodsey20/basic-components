@@ -2,11 +2,11 @@ $white: #fff;
 $blue: #2f80ed;
 $darkblue: #2361b2;
 $darkerblue: #1a4884;
+$width: 200px;
 
 .dropdownMenu {
   position: relative;
   display: inline-block;
-  padding-right: 15px;
 }
 
 .dropdownMenu.isOpen {
@@ -18,18 +18,36 @@ $darkerblue: #1a4884;
 
 .dropdownMenu__wrap {
   position: relative;
-  min-width: 200px;
+  min-width: 100px;
+
+  .fa {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    font-size: 16px;
+    line-height: 1;
+    transform: translateY(-65%);
+  }
 }
 
 .dropdownMenu__title {
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: top;
+  padding: 14px 10px;
   white-space: nowrap;
 }
 
 .dropdownMenu__currentValue {
   display: inline-block;
+  overflow: hidden;
+  width: $width;
   margin-left: 5px;
+  padding: 14px 10px;
+  padding-right: 30px;
+  vertical-align: top;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .dropdownMenu__list {
@@ -37,9 +55,23 @@ $darkerblue: #1a4884;
   right: 0;
   top: 100%;
   display: none;
-  vertical-align: middle;
-  padding: 10px 20px;
+  width: $width;
 
   background-color: #fcfdff;
   box-shadow: 0 0 20px 0 rgba(1, 1, 1, 0.15);
+}
+
+.dropdownMenu__item {
+  padding: 15px 20px;
+  padding-right: 30px;
+
+  &:hover {
+    background-color: $blue;
+    color: $white;
+  }
+}
+
+.dropdownMenu__item.isActive {
+  background-color: $blue;
+  color: $white;
 }

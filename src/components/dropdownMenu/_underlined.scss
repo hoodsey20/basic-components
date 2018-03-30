@@ -1,0 +1,7 @@
+$borderColor: #E0E0E0;
+
+.dropdownMenu_underlined {
+  .dropdownMenu__currentValue {
+    border-bottom: 2px solid $borderColor;
+  }
+}

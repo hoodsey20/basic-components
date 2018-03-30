@@ -1,4 +1,4 @@
-$accentColor: #2F80ED;
+$accentColor: #2f80ed;
 $textColor: #666;
 
 .select_custom {
@@ -8,43 +8,20 @@ $textColor: #666;
   border: 2px solid #E0E0E0;
   padding: 15px 18px;
   padding-right: 30px;
-  color: #c4c4c4;
+  color: #333;
 
-  &:before {
-    content: "\f0d7";
-    position: absolute;
-    top: 13px;
-    right: 14px;
-    display: inline-block;
-    font: normal normal normal 14px/1 FontAwesome;
-    font-size: inherit;
-    text-rendering: auto;
-    font-size: 18px;
-    color: $accentColor;
-    pointer-events: none;
-  }
-
-  &.select_icon > .fa {
-    position: absolute;
-    top: 13px;
-    right: -30px;
-    font-size: 18px;
-    color: #ccc;
-    cursor: pointer;
-  }
-
-  &.isCompleted {  
+  &.isCompleted {
     color: $textColor;
-    
+
     .option {
       color: $textColor;
     }
-    
+
     >.fa {
       color: $accentColor;
     }
   }
- 
+
   .select__optionList {
     position: absolute;
     display: none;
@@ -62,16 +39,12 @@ $textColor: #666;
     margin-bottom: -1px;
     padding: 15px 18px;
     padding-right: 30px;
-    color: #c4c4c4;
+    color: #666;
     cursor: pointer;
 
     &:hover {
-      background-color: #fff;
-      color: #ccc;
+      background-color: $accentColor;
+      color: #fff;
     }
-  }
-
-  .addElement {
-    border-top: 2px solid #FAFAFA;
   }
 }

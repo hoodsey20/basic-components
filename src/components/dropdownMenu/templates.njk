@@ -1,14 +1,31 @@
 {% macro clear (name) %}
   <div class="dropdownMenu js-dropdownMenu">
+    <input class="dropdownMenu__input" name="sorttype" type="hidden" value="">
     <div class="dropdownMenu__wrap">
       <div class="dropdownMenu__title">Сортировать по:</div>
       <div class="dropdownMenu__currentValue"></div>
         <ul class="dropdownMenu__list">
-          <li class="dropdownMenu__item">Цене</li>
-          <li class="dropdownMenu__item">Популярности</li>
-          <li class="dropdownMenu__item">Скидке</li>
-          <li class="dropdownMenu__item isActive">Актуальности</li>
-        </ul>      
+          <li class="dropdownMenu__item" data-value="1">Цене</li>
+          <li class="dropdownMenu__item" data-value="2">Популярности</li>
+          <li class="dropdownMenu__item" data-value="3">Скидке</li>
+          <li class="dropdownMenu__item isActive" data-value="4">Актуальности</li>
+        </ul>
+    </div>
+  </div>
+{% endmacro %}
+
+{% macro noheader (modificator) %}
+  <div class="dropdownMenu {{modificator}} js-dropdownMenu">
+    <input class="dropdownMenu__input" name="animal" type="hidden" value="">
+    <div class="dropdownMenu__wrap">
+      <i class="fa fa-sort-down"></i>
+      <div class="dropdownMenu__currentValue">Выберете животное:</div>
+        <ul class="dropdownMenu__list">
+          <li class="dropdownMenu__item" data-value="1">Лошадь Лошадь Лошадь</li>
+          <li class="dropdownMenu__item" data-value="2">Леопард</li>
+          <li class="dropdownMenu__item" data-value="3">Собака</li>
+          <li class="dropdownMenu__item" data-value="4">Слон</li>
+        </ul>
     </div>
   </div>
 {% endmacro %}

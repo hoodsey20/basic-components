@@ -25,6 +25,9 @@ $laptopsScreen: 1270px;
 @import "counter/_side";
 
 @import "dropdownMenu/styles";
+@import "dropdownMenu/_brdr";
+@import "dropdownMenu/_underlined";
+@import "dropdownMenu/_bgr";
 
 @import "collapseCard/styles";
 @import "collapseCard/_bgr";
@@ -61,8 +64,8 @@ $laptopsScreen: 1270px;
 @import "textarea/_radius";
 @import "textarea/_underlined";
 
-@import "select_custom/styles";
-@import "select_multiSelect/styles";
+@import "customSelect/styles";
+// @import "select_multiSelect/styles";
 
 @import "upload/styles";
 @import "upload/_button/styles";

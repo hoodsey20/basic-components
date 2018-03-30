@@ -1,0 +1,11 @@
+$backgroundColor: #f5f3f3;
+
+.dropdownMenu_bgr {
+  .dropdownMenu__currentValue {
+    background-color: $backgroundColor;
+  }
+
+  .dropdownMenu__list {
+    background-color: $backgroundColor;
+  }
+}
