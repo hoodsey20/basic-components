@@ -1,0 +1,45 @@
+{% set page = {
+  title: "roller",
+  description: "ролик на все случаи жизни 😎"
+} %}
+
+{% import "./templates.njk" as element %}
+
+{% extends fesg.components %}
+
+{% block body %}
+
+{% section title="Одиночный" %}
+{{ element.one('singleRoller') }}
+<br>
+<br>
+{{ element.two('doubleRoller') }}
+{% code %}
+{{ element.one('singleRoller') }}
+пример инициализации:
+
+<script>
+var singleRoller = document.getElementById('singleRoller');
+var singleRollerInput = document.querySelector('[name=singleRoller_start]');
+
+var moveHandler = function (val1, val2, input) {
+  singleRollerInput.value = val1 + '/' + val2;
+};
+
+var mouseUpHandler = function (val1, val2, input) {
+  console.log('onMouseUp');
+};
+
+var singleRollerProps = {
+  parentElement: singleRoller,
+  minValue: 200,
+  maxValue: 8500,
+  step: 277,
+  onMove: moveHandler,
+  onMouseUp: mouseUpHandler
+};
+window.roller(singleRollerProps);
+</script>
+{% endsection %}
+
+{% endblock %}

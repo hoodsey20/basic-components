@@ -1,0 +1,94 @@
+$tabletsLandscapeScreen: 992px;
+$maxWidth: 350px;
+$mainColor: #2F80ED;
+$shaftBackgroundColor: #DCDCDC;
+
+$circleSize: 12px;
+$shaftSize: 5px;
+
+
+
+.roller {
+  max-width: $maxWidth;
+
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+}
+
+.roller__shaft {
+  position: relative;
+  height: $shaftSize;
+  background-color: $shaftBackgroundColor;
+}
+
+.roller__shaft-indicator {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  height: 100%;
+  width: 100%;
+  background: $mainColor;
+
+  background-color: $mainColor;
+
+}
+
+.roller__circle {
+  position: absolute;
+  left: 0;
+  top: 50%;
+
+  width: 40px;
+  height: 40px;
+  margin-top: -20px;
+
+  text-align: center;
+
+  background-color: $mainColor;
+  border-radius: 50%;
+
+  cursor: move;
+  cursor: grab;
+
+  @media screen and (min-width: $tabletsLandscapeScreen) {
+    width: $circleSize;
+    height: $circleSize;
+    margin-top: - $circleSize / 2;
+
+    border-radius: 50%;
+  }
+
+  &:before {
+    @media screen and (min-width: $tabletsLandscapeScreen) {
+      display: inline-block;
+      content: '';
+    }
+  }
+}
+
+
+.roller__circle_2 {
+  left: auto;
+  right: 0;
+}
+
+
+.roller__data-container {
+  margin-bottom: 20px;
+
+  font-size: 0;
+
+  @media screen and (min-width: $tabletsLandscapeScreen) {
+    margin-bottom: 10px;
+  }
+}
+
+.roller__data {
+  font-size: 18px;
+
+  @media screen and (min-width: $tabletsLandscapeScreen) {
+    font-size: 14px;
+  }
+}

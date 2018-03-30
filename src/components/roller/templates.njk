@@ -1,0 +1,28 @@
+{% macro one (id) %}
+<div class="roller" id="{{id}}">
+  <div class="roller__shaft">
+    <div class="roller__shaft-indicator"></div>
+    <div class="roller__circle"></div>
+  </div>
+</div>
+<br>
+<br>
+<div>
+  <input type="text" name="{{id}}_start" value="">
+</div>
+{% endmacro %}
+
+{% macro two (id) %}
+<div class="roller" id="{{id}}">
+  <div class="roller__shaft">
+    <div class="roller__shaft-indicator"></div>
+    <div class="roller__circle"></div>
+    <div class="roller__circle roller__circle_2"></div>
+  </div>
+</div>
+<br>
+<br>
+<div>
+  <input type="text" name="{{id}}_start" value="">
+</div>
+{% endmacro %}
