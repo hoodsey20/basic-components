@@ -6,8 +6,9 @@ window.roller = function (params) {
   // consts
   var MIN = params.minValue;
   var MAX = params.maxValue;
-  var STEP = params.step || (MAX - MIN) / 20;
   var DIFFERENCE = MAX - MIN;
+  var DEFAULT_STEPS_QUNTITY = 20;
+  var STEP = params.step || DIFFERENCE / DEFAULT_STEPS_QUNTITY;
 
   // nodes
   var rollerNode = params.parentElement;
@@ -55,7 +56,10 @@ window.roller = function (params) {
   }
 
   var roundOff = function (val) {
-    var value = Number(val);
+    var value = val;
+    if (val !== 0) {
+      value = Number(val).toFixed(0);
+    }
 
     if (value === STEP) return value;
 
@@ -100,14 +104,11 @@ window.roller = function (params) {
     var percent = getHandlerPositionPercent(rollerPosition, rollerNodeLongitude);
 
     if (!isSecondHandler) {
-      // значение ширины оси
-      rollerHandler.style.left = percent + '%';
-
-      value1 = ((percent * DIFFERENCE / 100) + MIN).toFixed(0);
-      value1 = roundOff(value1);
-
-      shaftIndicator.style.width = 100 - percent + '%';
       currentChangedInput = 1;
+      rollerHandler.style.left = percent + '%';
+      shaftIndicator.style.width = 100 - percent + '%';
+
+      value1 = roundOff(percent * DIFFERENCE / 100 + MIN);
     }
     // end one roller condition
 
@@ -124,11 +125,10 @@ window.roller = function (params) {
 
         if (percent + secondHandlerPosition <= 100 - procentGap) {
           rollerHandler.style.left = percent + '%';
-          value1 = ((percent * DIFFERENCE / 100) + MIN).toFixed(0);
-          value1 = roundOff(value1);
-
           shaftIndicatorFromLeft = percent;
           shaftIndicator.style.width = 100 - (shaftIndicatorFromLeft + shaftIndicatorFromRight) + '%';
+
+          value1 = roundOff(percent * DIFFERENCE / 100 + MIN);
         }
       }
 
@@ -137,12 +137,12 @@ window.roller = function (params) {
 
         if ((100 - percent) + handlerPosition <= 100 - procentGap) {
           rollerHandler2.style.right = (100 - percent) + '%';
-          value2 = ((percent * DIFFERENCE / 100) + MIN).toFixed(0);
-          value2 = roundOff(value2);
 
           shaftIndicatorFromRight = (100 - percent);
           shaftIndicator.style.width = 100 - (shaftIndicatorFromLeft + shaftIndicatorFromRight) + '%';
           shaftIndicator.style.right = (100 - percent) + '%';
+
+          value2 = roundOff(percent * DIFFERENCE / 100 + MIN);
         }
       }
     }
