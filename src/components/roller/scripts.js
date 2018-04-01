@@ -58,7 +58,7 @@ window.roller = function (params) {
     }
   };
 
-  function move (pointerPosition, target) {
+  var move = function (pointerPosition, target) {
     var maxRight = rollerParent.offsetWidth;
     var percent = 0;
     var parentDistance = rollerParent.getBoundingClientRect();
@@ -145,6 +145,7 @@ window.roller = function (params) {
   var parentDistance = rollerParent.getBoundingClientRect();
 
   if (params.startValue) {
+    debugger;
     var startCoef = params.startValue > max ? 1 : (params.startValue - min) / differenceValue;
     var startPx = maxRight * startCoef + parentDistance.left;
     move(startPx);
@@ -164,7 +165,7 @@ window.roller = function (params) {
   });
 
   // события для мыши
-  function mouseListener (element) {
+  var mouseListener = function (element) {
     element.onmousedown = function () {
       document.onmousemove = function (e) {
         move(e.pageX, e.target);
@@ -187,7 +188,7 @@ window.roller = function (params) {
 
   // события для touch
 
-  function touchListener (element) {
+  var touchListener = function (element) {
     if (window.TouchEvent) {
       var touchMove = function (e) {
         var touchobj = e.changedTouches[0];
