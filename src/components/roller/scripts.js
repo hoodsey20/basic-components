@@ -102,13 +102,14 @@ window.roller = function (params) {
     var parentLongitudeFromLeft = rollerNode.getBoundingClientRect().left;
     var rollerPosition = pointerPosition - parentLongitudeFromLeft;
     var percent = getHandlerPositionPercent(rollerPosition, rollerNodeLongitude);
+    var restLongitudeOfShaft = 100 - percent;
 
     if (!isSecondHandler) {
       currentChangedInput = 1;
-      rollerHandler.style.left = percent + '%';
-      shaftIndicator.style.width = 100 - percent + '%';
-
       value1 = roundOff(percent * DIFFERENCE / 100 + MIN);
+
+      rollerHandler.style.left = percent + '%';
+      shaftIndicator.style.width = restLongitudeOfShaft + '%';
     }
     // end one roller condition
 
@@ -135,14 +136,13 @@ window.roller = function (params) {
       if (currentTarget === rollerHandler2) {
         currentChangedInput = 2;
 
-        if ((100 - percent) + handlerPosition <= 100 - procentGap) {
-          rollerHandler2.style.right = (100 - percent) + '%';
-
-          shaftIndicatorFromRight = (100 - percent);
-          shaftIndicator.style.width = 100 - (shaftIndicatorFromLeft + shaftIndicatorFromRight) + '%';
-          shaftIndicator.style.right = (100 - percent) + '%';
-
+        if (restLongitudeOfShaft + handlerPosition <= 100 - procentGap) {
           value2 = roundOff(percent * DIFFERENCE / 100 + MIN);
+          shaftIndicatorFromRight = restLongitudeOfShaft;
+
+          rollerHandler2.style.right = restLongitudeOfShaft + '%';
+          shaftIndicator.style.right = restLongitudeOfShaft + '%';
+          shaftIndicator.style.width = 100 - (shaftIndicatorFromLeft + shaftIndicatorFromRight) + '%';
         }
       }
     }
