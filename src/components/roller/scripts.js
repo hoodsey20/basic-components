@@ -29,9 +29,9 @@ window.roller = function (params) {
   var handlerPosition = 0;
   var secondHandlerPosition = 0;
 
-  var maxRight = rollerNode.offsetWidth;
+  var rollerNodeLongitude = rollerNode.offsetWidth;
   var parentLongitudeFromLeft = rollerNode.getBoundingClientRect().left;
-  console.log(maxRight, parentLongitudeFromLeft);
+
   var shaftIndicatorFromLeft = 0;
   var shaftIndicatorFromRight = 0;
 
@@ -94,10 +94,10 @@ window.roller = function (params) {
 
   var move = function (pointerPosition, target) {
     var procentGap = getProcentGap();
-    var maxRight = rollerNode.offsetWidth;
+    var rollerNodeLongitude = rollerNode.offsetWidth;
     var parentLongitudeFromLeft = rollerNode.getBoundingClientRect().left;
     var rollerPosition = pointerPosition - parentLongitudeFromLeft;
-    var percent = getHandlerPositionPercent(rollerPosition, maxRight);
+    var percent = getHandlerPositionPercent(rollerPosition, rollerNodeLongitude);
 
     if (!isSecondHandler) {
       // значение ширины оси
@@ -155,13 +155,13 @@ window.roller = function (params) {
 
   if (params.startValue) {
     var startCoef = params.startValue > MAX ? 1 : (params.startValue - MIN) / DIFFERENCE;
-    var startPx = maxRight * startCoef + parentLongitudeFromLeft;
+    var startPx = rollerNodeLongitude * startCoef + parentLongitudeFromLeft;
     move(startPx);
   }
 
   if (params.endValue) {
     var endCoef = params.endValue > MAX ? 1 : (params.endValue - MIN) / DIFFERENCE;
-    var endPx = maxRight * endCoef + parentLongitudeFromLeft;
+    var endPx = rollerNodeLongitude * endCoef + parentLongitudeFromLeft;
     move(endPx, rollerHandler2);
   }
 
