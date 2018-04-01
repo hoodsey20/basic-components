@@ -56,9 +56,9 @@ window.roller = function (params) {
   }
 
   var roundOff = function (val) {
-    var value = val;
-    if (val !== 0) {
-      value = Number(val).toFixed(0);
+    var value = Number(val);
+    if (value !== 0) {
+      value = Number(value.toFixed(0));
     }
 
     if (value === STEP) return value;
@@ -96,7 +96,7 @@ window.roller = function (params) {
     return handlerPositionPercent;
   }
 
-  var move = function (pointerPosition, target) {
+  var move = function (pointerPosition, target, declaredValue) {
     var procentGap = getProcentGap();
     var rollerNodeLongitude = rollerNode.offsetWidth;
     var parentLongitudeFromLeft = rollerNode.getBoundingClientRect().left;
@@ -106,7 +106,11 @@ window.roller = function (params) {
 
     if (!isSecondHandler) {
       currentChangedInput = 1;
-      value1 = roundOff(percent * DIFFERENCE / 100 + MIN);
+      if (declaredValue) {
+        value1 = roundOff(declaredValue);
+      } else {
+        value1 = roundOff(percent * DIFFERENCE / 100 + MIN);
+      }
 
       rollerHandler.style.left = percent + '%';
       shaftIndicator.style.width = restLongitudeOfShaft + '%';
@@ -126,8 +130,11 @@ window.roller = function (params) {
           handlerPosition = percent;
           shaftIndicatorFromLeft = percent;
           shaftIndicator.style.width = 100 - (shaftIndicatorFromLeft + shaftIndicatorFromRight) + '%';
-
-          value1 = roundOff(percent * DIFFERENCE / 100 + MIN);
+          if (declaredValue) {
+            value1 = roundOff(declaredValue);
+          } else {
+            value1 = roundOff(percent * DIFFERENCE / 100 + MIN);
+          }
         }
       }
 
@@ -135,7 +142,11 @@ window.roller = function (params) {
         currentChangedInput = 2;
 
         if (restLongitudeOfShaft + handlerPosition <= 100 - procentGap) {
-          value2 = roundOff(percent * DIFFERENCE / 100 + MIN);
+          if (declaredValue) {
+            value2 = roundOff(declaredValue);
+          } else {
+            value2 = roundOff(percent * DIFFERENCE / 100 + MIN);
+          }
 
           shaftIndicatorFromRight = restLongitudeOfShaft;
           secondHandlerPosition = restLongitudeOfShaft;
@@ -155,13 +166,13 @@ window.roller = function (params) {
   if (params.startValue) {
     var startCoef = params.startValue > MAX ? 1 : (params.startValue - MIN) / DIFFERENCE;
     var startPx = rollerNodeLongitude * startCoef + parentLongitudeFromLeft;
-    move(startPx);
+    move(startPx, rollerHandler, params.startValue);
   }
 
   if (params.endValue) {
     var endCoef = params.endValue > MAX ? 1 : (params.endValue - MIN) / DIFFERENCE;
     var endPx = rollerNodeLongitude * endCoef + parentLongitudeFromLeft;
-    move(endPx, rollerHandler2);
+    move(endPx, rollerHandler2, params.endValue);
   }
 
   // событие по клику на ось
