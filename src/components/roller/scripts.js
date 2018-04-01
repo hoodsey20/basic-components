@@ -158,7 +158,7 @@ window.roller = function (params) {
   }
 
   // событие по клику на ось
-  rollerParent.addEventListener('click', function (e) {
+  var clickListener = function (e) {
     if (roller2Exist) {
       if (e.target !== roller && e.target !== roller2) {
         move(e.pageX);
@@ -167,7 +167,9 @@ window.roller = function (params) {
     }
 
     if (e.target !== roller) move(e.pageX);
-  });
+  }
+
+  rollerParent.addEventListener('click', clickListener);
 
   // события для мыши
   var mouseListener = function (element) {
