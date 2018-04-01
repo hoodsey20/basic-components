@@ -114,9 +114,6 @@ window.roller = function (params) {
     // end one roller condition
 
     if (isSecondHandler) {
-      handlerPosition = Number(rollerHandler.style.left.split('%')[0]) || handlerPosition;
-      secondHandlerPosition = Number(rollerHandler2.style.right.split('%')[0]) || secondHandlerPosition;
-
       if (target === rollerHandler || target === rollerHandler2) {
         currentTarget = target;
       }
@@ -126,6 +123,7 @@ window.roller = function (params) {
 
         if (percent + secondHandlerPosition <= 100 - procentGap) {
           rollerHandler.style.left = percent + '%';
+          handlerPosition = percent;
           shaftIndicatorFromLeft = percent;
           shaftIndicator.style.width = 100 - (shaftIndicatorFromLeft + shaftIndicatorFromRight) + '%';
 
@@ -138,8 +136,9 @@ window.roller = function (params) {
 
         if (restLongitudeOfShaft + handlerPosition <= 100 - procentGap) {
           value2 = roundOff(percent * DIFFERENCE / 100 + MIN);
-          shaftIndicatorFromRight = restLongitudeOfShaft;
 
+          shaftIndicatorFromRight = restLongitudeOfShaft;
+          secondHandlerPosition = restLongitudeOfShaft;
           rollerHandler2.style.right = restLongitudeOfShaft + '%';
           shaftIndicator.style.right = restLongitudeOfShaft + '%';
           shaftIndicator.style.width = 100 - (shaftIndicatorFromLeft + shaftIndicatorFromRight) + '%';
