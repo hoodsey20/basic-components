@@ -61,21 +61,26 @@ window.roller = function (params) {
     }
   };
 
+  var getHandlerPositionPercent = function (handlerPosition, totalLongitude) {
+    var handlerPositionPercent = Math.ceil(handlerPosition / totalLongitude * 100);
+
+    if (handlerPositionPercent > 100) {
+      handlerPositionPercent = 100;
+    } else if (handlerPositionPercent < 0) {
+      handlerPositionPercent = 0;
+    }
+
+    return handlerPositionPercent;
+  }
+
   var move = function (pointerPosition, target) {
     var maxRight = rollerParent.offsetWidth;
-    var percent = 0;
     var parentLongitude = rollerParent.getBoundingClientRect().left;
+    var rollerPosition = pointerPosition - parentLongitude;
+    var percent = getHandlerPositionPercent(rollerPosition, maxRight);
+
     if (!roller2Exist) {
       // значение ширины оси
-      var rollerPosition = pointerPosition - parentLongitude;
-      percent = Math.ceil(rollerPosition / maxRight * 100);
-
-      if (percent > 100) {
-        percent = 100;
-      } else if (percent < 0) {
-        percent = 0;
-      }
-
       roller.style.left = percent + '%';
 
       value1 = ((percent * differenceValue / 100) + min).toFixed(0);
@@ -91,19 +96,11 @@ window.roller = function (params) {
     if (roller2Exist) {
       roller1position = Number(roller.style.left.split('%')[0]) || roller1position;
       roller2position = Number(roller2.style.right.split('%')[0]) || roller2position;
-      rollerPosition = pointerPosition - parentLongitude;
-      percent = Math.ceil(rollerPosition / maxRight * 100);
 
       if (target === roller) {
         currentTarget = roller;
       } else if (target === roller2) {
         currentTarget = roller2;
-      }
-
-      if (percent > 100) {
-        percent = 100;
-      } else if (percent < 0) {
-        percent = 0;
       }
 
       if (currentTarget === roller) {
@@ -145,7 +142,6 @@ window.roller = function (params) {
   // end move function
 
   if (params.startValue) {
-    debugger;
     var startCoef = params.startValue > max ? 1 : (params.startValue - min) / differenceValue;
     var startPx = maxRight * startCoef + parentLongitude;
     move(startPx);
@@ -194,7 +190,6 @@ window.roller = function (params) {
   }
 
   // события для touch
-
   var touchListener = function (element) {
     if (window.TouchEvent) {
       var touchMove = function (e) {
