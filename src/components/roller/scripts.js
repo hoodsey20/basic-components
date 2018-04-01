@@ -27,6 +27,8 @@ window.roller = function (params) {
   var defaultGap = Math.floor(differenceValue * circleToRollerRatio) * 2;
   var gap = params.gap || defaultGap;
   var procentGap = Math.floor((gap * 100) / (max - min));
+  var maxRight = rollerParent.offsetWidth;
+  var parentLongitude = rollerParent.getBoundingClientRect().left;
 
   if (!!params.secondRoller && rollerParent.querySelectorAll('.roller__circle').length > 1) {
     var roller2 = rollerParent.querySelectorAll('.roller__circle')[1];
@@ -37,6 +39,7 @@ window.roller = function (params) {
     var value = Number(val);
 
     if (value === step) return value;
+
     var numberTail = value % step;
 
     if (value === numberTail) {
@@ -61,10 +64,10 @@ window.roller = function (params) {
   var move = function (pointerPosition, target) {
     var maxRight = rollerParent.offsetWidth;
     var percent = 0;
-    var parentDistance = rollerParent.getBoundingClientRect();
+    var parentLongitude = rollerParent.getBoundingClientRect().left;
     if (!roller2Exist) {
       // значение ширины оси
-      var rollerPosition = pointerPosition - parentDistance.left;
+      var rollerPosition = pointerPosition - parentLongitude;
       percent = Math.ceil(rollerPosition / maxRight * 100);
 
       if (percent > 100) {
@@ -88,7 +91,7 @@ window.roller = function (params) {
     if (roller2Exist) {
       roller1position = Number(roller.style.left.split('%')[0]) || roller1position;
       roller2position = Number(roller2.style.right.split('%')[0]) || roller2position;
-      rollerPosition = pointerPosition - parentDistance.left;
+      rollerPosition = pointerPosition - parentLongitude;
       percent = Math.ceil(rollerPosition / maxRight * 100);
 
       if (target === roller) {
@@ -141,27 +144,29 @@ window.roller = function (params) {
   }
   // end move function
 
-  var maxRight = rollerParent.offsetWidth;
-  var parentDistance = rollerParent.getBoundingClientRect();
-
   if (params.startValue) {
     debugger;
     var startCoef = params.startValue > max ? 1 : (params.startValue - min) / differenceValue;
-    var startPx = maxRight * startCoef + parentDistance.left;
+    var startPx = maxRight * startCoef + parentLongitude;
     move(startPx);
   }
 
   if (params.endValue) {
     var endCoef = params.endValue > max ? 1 : (params.endValue - min) / differenceValue;
-    var endPx = maxRight * endCoef + parentDistance.left;
+    var endPx = maxRight * endCoef + parentLongitude;
     move(endPx, roller2);
   }
 
   // событие по клику на ось
   rollerParent.addEventListener('click', function (e) {
-    if (e.target !== roller) {
-      move(e.pageX, e.target);
+    if (roller2Exist) {
+      if (e.target !== roller && e.target !== roller2) {
+        move(e.pageX, e.target);
+      }
+      return;
     }
+
+    if (e.target !== roller) move(e.pageX, e.target);
   });
 
   // события для мыши
