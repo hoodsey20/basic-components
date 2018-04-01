@@ -161,12 +161,12 @@ window.roller = function (params) {
   rollerParent.addEventListener('click', function (e) {
     if (roller2Exist) {
       if (e.target !== roller && e.target !== roller2) {
-        move(e.pageX, e.target);
+        move(e.pageX);
       }
       return;
     }
 
-    if (e.target !== roller) move(e.pageX, e.target);
+    if (e.target !== roller) move(e.pageX);
   });
 
   // события для мыши
