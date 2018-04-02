@@ -13,7 +13,7 @@ $inputBackgroundColor: #E0E0E0;
 
 .counter__button {
   border: 0;
-  vertical-align: middle;
+  vertical-align: top;
   width: $size;
   height: $size;
   padding: 0;
@@ -25,7 +25,7 @@ $inputBackgroundColor: #E0E0E0;
 
 .counter__input {
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: top;
   width: $inputWidth;
   height: $size;
   border: 0;

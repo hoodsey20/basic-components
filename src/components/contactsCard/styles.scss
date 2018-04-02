@@ -1,0 +1,103 @@
+$phonesScreen: 480px;
+$tabletsPortraitScreen: 768px;
+$tabletsLandscapeScreen: 992px;
+$laptopsScreen: 1270px;
+$backgroundColor: #dbd9d9;
+$fontColor: #666;
+
+.contactsCard {
+  background-color: $backgroundColor;
+
+  @media screen and (min-width: $tabletsPortraitScreen) {
+    padding: 40px 25px;
+  }
+
+  @media screen and (min-width: $laptopsScreen) {
+    padding: 70px 55px;
+  }
+}
+
+.contactsCard__wrap {
+  font-size: 0;
+}
+
+.contactsCard__mapContainer {
+  padding-bottom: 100%;
+  background-color: #333;
+
+  @media screen and (min-width: $phonesScreen) {
+    padding-bottom: 50%;
+  }
+
+  @media screen and (min-width: $tabletsPortraitScreen) {
+    display: inline-block;
+    width: 65%;
+    padding-bottom: 65%;
+    vertical-align: top;
+  }
+}
+
+.contactsCard__contentContainer {
+  padding: 15px 20px;
+
+  @media screen and (min-width: $tabletsPortraitScreen) {
+    display: inline-block;
+    width: 35%;
+    padding: 0;
+    padding-left: 3%;
+    vertical-align: top;
+  }
+}
+
+.contactsCard__title {
+  margin-bottom: 14px;
+  font-size: 18px;
+  font-weight: 600;
+
+  color: $fontColor;
+
+  @media screen and (min-width: $tabletsLandscapeScreen) {
+    font-size: 32px;
+  }
+}
+
+.contactsCard__listItem {
+  display: block;
+  line-height: 1.5;
+  color: $fontColor;
+}
+
+.contactsCard__listItem + .contactsCard__listItem {
+  margin-top: 12px;
+
+  @media screen and (min-width: $tabletsLandscapeScreen) {
+    margin-top: 15px;
+  }
+}
+
+.contactsCard__listItemName {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+
+  @media screen and (min-width: $tabletsLandscapeScreen) {
+    font-size: 16px;
+  }
+}
+
+.contactsCard__listItemData {
+  font-size: 12px;
+
+  @media screen and (min-width: $tabletsLandscapeScreen) {
+    font-size: 14px;
+  }
+
+  a {
+    color: $fontColor;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

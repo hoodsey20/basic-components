@@ -1,0 +1,42 @@
+{% macro bgr (name) %}
+<div class="contactsCard">
+  <div class="contactsCard__wrap">
+    <div class="contactsCard__mapContainer">
+      <div class="contactsCard__map" id="contactsCardMap"></div>
+    </div>
+    <div class="contactsCard__contentContainer">
+      <div class="contactsCard__title">Контакты</div>
+      <ul class="contactsCard__list">
+        <li class="contactsCard__listItem">
+          <span class="contactsCard__listItemName">Телефон</span>
+          <span class="contactsCard__listItemData">
+            <a href="tel:+73833003030">8 (383) 300-30-30</a>
+          </span>
+        </li>
+
+        <li class="contactsCard__listItem">
+          <span class="contactsCard__listItemName">E-mail</span>
+          <span class="contactsCard__listItemData">
+            <a href="mailto:mail@mail.ru">mail@mail.ru</a>
+          </span>
+        </li>
+
+        <li class="contactsCard__listItem">
+          <span class="contactsCard__listItemName">Фактический адрес</span>
+          <span class="contactsCard__listItemData">630108, г.Новосибирск,<br> ул. Станционная 36 офис 109</span>
+        </li>
+
+        <li class="contactsCard__listItem">
+          <span class="contactsCard__listItemName">Юридический адрес</span>
+          <span class="contactsCard__listItemData">630108, г.Новосибирск,<br> ул. Станционная 36 офис 109</span>
+        </li>
+
+        <li class="contactsCard__listItem">
+          <span class="contactsCard__listItemName">Время работы</span>
+          <span class="contactsCard__listItemData">пн-пт, 9:00-18:00</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+{% endmacro %}

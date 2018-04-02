@@ -1,0 +1,18 @@
+{% set page = {
+  title: "contactsCard",
+  description: "Карта и контакты 🗺️"
+} %}
+
+{% import "./templates.njk" as element %}
+
+{% extends fesg.components %}
+
+{% block body %}
+
+  {% section title="contactsCard" %}
+    {{ element.bgr() }}
+  {% code %}
+    {{ element.bgr() }}
+  {% endsection %}
+
+{% endblock %}
