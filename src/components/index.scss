@@ -4,9 +4,6 @@ $tabletsPortraitScreen: 768px;
 $tabletsLandscapeScreen: 992px;
 $laptopsScreen: 1270px;
 
-@import "hello/styles";
-@import "image/styles";
-
 @import "breadcrumbs/styles";
 
 @import "button/styles";
@@ -49,6 +46,8 @@ $laptopsScreen: 1270px;
 
 @import "miniCard/styles";
 @import "miniCard/_default";
+
+@import "overlayCard/styles";
 
 @import "radio/styles";
 @import "radio/_fa";

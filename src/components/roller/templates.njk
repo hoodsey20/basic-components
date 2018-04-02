@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     var mouseUpHandler = function (val1, val2, input) {
-      console.log('onMouseUp');
+      console.log('onMouseUp', val1, val2, input);
     };
 
     var singleRollerProps = {
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     var mouseUpHandler2 = function (val1, val2, input) {
-      console.log('onMouseUp2');
+      console.log('onMouseUp2', val1, val2, input);
     };
 
     var doubleRollerProps = {
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
       minValue: 0,
       maxValue: 180000,
       secondRoller: true,
-      startValue: 501,
+      startValue: 2000,
       endValue: 120000,
       step: 1000,
       onMove: moveHandler2,
