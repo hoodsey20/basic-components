@@ -1,0 +1,19 @@
+$tabTextColor: #fff;
+$tabColor: #2F80ED;
+$tabActiveColor: #2464b7;
+$tabUnderlineColor: #56CCF2;
+
+.tabs_bgr {
+  .tabs__item {
+    color: $tabTextColor;
+    background-color: $tabColor;
+
+    &:before {
+      background-color: $tabUnderlineColor;
+    }
+  }
+
+  .tabs__item.isActive {
+    background-color: $tabActiveColor;
+  }
+}

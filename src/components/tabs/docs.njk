@@ -9,10 +9,23 @@
 
 {% block body %}
 
-  {% section title="Clear" %}
+  {% section title="tabs" %}
     {{ element.clear('') }}
   {% code %}
     {{ element.clear('') }}
+  {% endsection %}
+
+
+  {% section title="tabs_bgr" %}
+    {{ element.clear('tabs_bgr') }}
+  {% code %}
+    {{ element.clear('tabs_bgr') }}
+  {% endsection %}
+
+  {% section title="tabs_vertical" %}
+    {{ element.clear('tabs_vertical') }}
+  {% code %}
+    {{ element.clear('tabs_vertical') }}
   {% endsection %}
 
 {% endblock %}

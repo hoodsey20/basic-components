@@ -57,7 +57,8 @@ $laptopsScreen: 1270px;
 @import "stars/styles";
 
 @import "tabs/styles";
-@import "tabs_vertical/styles";
+@import "tabs/_bgr";
+@import "tabs/_vertical";
 
 @import "textarea/styles";
 @import "textarea/_bgr";
