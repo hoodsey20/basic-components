@@ -1,6 +1,6 @@
 {% set page = {
   title: "menuList",
-  description: "Выпадающее меню"
+  description: "Меню 📔"
 } %}
 
 {% import "./templates.njk" as element %}
@@ -9,10 +9,21 @@
 
 {% block body %}
 
-  {% section title="Clear", description="Без модификаторов" %}
-    {{ element.clear("- кнопка") }}
+  {% section title="menuList" %}
+    {{ element.clear('', 'max-width: 300px;') }}
   {% code %}
-    {{ element.clear("- кнопка") }}
+    {{ element.clear('', 'max-width: 300px;') }}
   {% endsection %}
 
+  {% section title="menuList_flat" %}
+    {{ element.clear('menuList_flat') }}
+  {% code %}
+    {{ element.clear('menuList_flat') }}
+  {% endsection %}
+
+  {% section title="menuList_flat menuList_flat_horizontal" %}
+    {{ element.clear('menuList_flat menuList_flat_horizontal') }}
+  {% code %}
+    {{ element.clear('menuList_flat menuList_flat_horizontal') }}
+  {% endsection %}
 {% endblock %}

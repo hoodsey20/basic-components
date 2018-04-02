@@ -41,8 +41,8 @@ $laptopsScreen: 1270px;
 @import "input/_underlined";
 
 @import "menuList/styles";
-@import "menuList_flat/styles";
-@import "menuList_flatHover/styles";
+@import "menuList/_flat";
+@import "menuList/_flat_horizontal";
 
 @import "miniCard/styles";
 @import "miniCard/_default";

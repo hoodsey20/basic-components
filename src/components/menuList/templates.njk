@@ -1,5 +1,5 @@
-{% macro clear (name) %}
-<ul class="menuList menuList_lvl0 js-menuList" style="max-width: 300px;">
+{% macro clear (modificator, styles) %}
+<ul class="menuList menuList_lvl0 {{modificator}} js-menuList" style="{{styles}}">
   <li class="menuList__item menuList__item_lvl0 isParent">
     <a class="menuList__link" href="#">Пункт меню (родительский)</a>
     <button class="menuList_toggler">
@@ -27,7 +27,7 @@
             <a class="menuList__link" href="#">Пункт меню третьего уровня запретили нажимать</a>
           </li>
         </ul>
-      </li>      
+      </li>
       <li class="menuList__item menuList__item_lvl1">
         <a class="menuList__link" href="#">Пункт меню второго уровня</a>
       </li>
@@ -59,21 +59,15 @@
           <li class="menuList__item menuList__item_lvl2 isCurrent">
             <a class="menuList__link" href="#">Пункт меню третьего уровня</a>
           </li>
-        </ul>        
+        </ul>
       </li>
       <li class="menuList__item menuList__item_lvl1">
         <a class="menuList__link" href="#">Пункт меню второго уровня</a>
       </li>
     </ul>
-  </li>  
-  <li class="menuList__item menuList__item_lvl0">
-    <a class="menuList__link" href="#">Пункт меню самый простой</a>
-  </li>  
+  </li>
   <li class="menuList__item menuList__item_lvl0 isCurrent">
     <a class="menuList__link" href="#">Пункт меню активный</a>
-  </li>
-  <li class="menuList__item menuList__item_lvl0">
-    <a class="menuList__link" href="#">Пункт меню самый простой</a>
   </li>
   <li class="menuList__item menuList__item_lvl0">
     <a class="menuList__link" href="#">Пункт меню самый простой</a>

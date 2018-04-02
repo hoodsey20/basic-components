@@ -1,0 +1,14 @@
+.menuList_flat_horizontal {
+  .menuList_lvl1 {
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  .menuList_lvl2 {
+    z-index: 999;
+    position: absolute;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  }
+}
