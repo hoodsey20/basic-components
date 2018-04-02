@@ -1,0 +1,18 @@
+{% set page = {
+  title: "modalWindow",
+  description: "Модальное окно 🖼️"
+} %}
+
+{% import "./templates.njk" as element %}
+
+{% extends fesg.components %}
+
+{% block body %}
+
+  {% section title="modalWindow" %}
+    {{ element.clear() }}
+  {% code %}
+    {{ element.clear() }}
+  {% endsection %}
+
+{% endblock %}

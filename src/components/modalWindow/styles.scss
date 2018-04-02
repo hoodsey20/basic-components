@@ -1,0 +1,42 @@
+$tabletsLandscapeScreen: 992px;
+$textColor: #666;
+$signColor: #2F80ED;
+
+.modalWindow {
+  padding: 25px 30px;
+
+  @media screen and (min-width: $tabletsLandscapeScreen) {
+    padding: 35px 60px;
+  }
+
+  .remodal-close {
+    left: auto;
+    right: 15px;
+    top: 15px;
+    color: $signColor;
+  }
+}
+
+.modalWindow__header {
+  margin-bottom: 20px;
+
+  @media screen and (min-width: $tabletsLandscapeScreen) {
+    margin-bottom: 25px;
+  }
+}
+
+.modalWindow__title {
+  font-size: 18px;
+  text-align: center;
+  color: $textColor;
+
+  @media screen and (min-width: $tabletsLandscapeScreen) {
+    font-size: 32px;
+  }
+}
+
+.modalWindow__body {
+  font-size: 14px;
+  text-align: left;
+  color: $textColor;
+}

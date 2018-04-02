@@ -1,0 +1,30 @@
+{% import "../button/templates.njk" as button %}
+
+{% macro clear (name) %}
+<div class="modalWindow remodal" data-remodal-id="modal-example" style="max-width: 540px;">
+  <button class="remodal-close" data-remodal-action="close" aria-label="Закрыть окно"></button>
+  <div class="modalWindow__wrap">
+    <div class="modalWindow__header">
+      <div class="modalWindow__title">Приветствие</div>
+    </div>
+    <div class="modalWindow__body">
+      <p>- Дратути, мистер собакен! 🐕</p>
+      <p>- Мой почтение, мистер кесулькен! 🐈</p>
+    </div>
+  </div>
+</div>
+{{ button.clear('Показать модальное окно', 'button_bgr js-showExampleModal') }}
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function () {
+  setTimeout(function() {
+    document.querySelector('.js-showExampleModal').addEventListener('click', function() {
+      window.exampleModal.open();
+    })
+  }, 2000);
+});
+</script>
+<!-- Необходимо подключить стили от remodal:
+@import '../node_modules/remodal/dist/remodal';
+@import '../node_modules/remodal/dist/remodal-default-theme';
+-->
+{% endmacro %}
