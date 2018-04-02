@@ -1,0 +1,27 @@
+{% import "../button/templates.njk" as button %}
+
+{% macro clear (name, src, modificator) %}
+<div class="overlayCard {{modificator}}">
+  <div class="overlayCard__wrap">
+
+    <div class="overlayCard__imgContainer">
+      <img
+        class="overlayCard__img"
+        src="{{src}}"
+        alt="{{name}}"
+      >
+    </div>
+
+    <div class="overlayCard__contentContainer">
+      <div class="overlayCard__contentWrap">
+        <div class="overlayCard__name">{{name}}</div>
+        <div class="overlayCard__description">
+          котлета, соус Чили мясной, соус Smoke, салат Айсберг, лечо из сладкого перца, сыр Чеддер, луковые кольца
+        </div>
+        {{ button.link('Читать далее', 'button_bgr') }}
+      </div>
+    </div>
+
+  </div>
+</div>
+{% endmacro %}

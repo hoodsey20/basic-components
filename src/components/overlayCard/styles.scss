@@ -1,0 +1,82 @@
+$tabletsLandscapeScreen: 992px;
+
+$imgHeight: 280px;
+
+$quickViewBackground: rgba(3, 3, 3, 0.6);
+$quickViewColor: #fff;
+
+$handlerButtonSize: 45px;
+$handlerButtonBackground: rgba(196, 196, 196, 0.8);
+$handlerIconSize: 22px;
+
+.overlayCard {
+  display: inline-block;
+  vertical-align: top;
+  width: $imgHeight;
+}
+
+.overlayCard__wrap {
+  position: relative;
+  overflow: hidden;
+
+  @media screen and (min-width: $tabletsLandscapeScreen) {
+    &:hover {
+      .overlayCard__contentContainer {
+        top: 0;
+      }
+    }
+  }
+}
+
+.overlayCard__imgContainer {
+  display: block;
+  height: $imgHeight;
+  width: 100%;
+  font-size: 0;
+}
+
+.overlayCard__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  font-family: 'object-fit: cover;';
+}
+
+.overlayCard__contentContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  text-align: center;
+
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: 0.7s;
+
+  @media screen and (min-width: $tabletsLandscapeScreen) {
+    top: 100%;
+  }
+}
+
+.overlayCard__contentWrap {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  padding: 0 15px;
+
+  transform: translateY(-50%);
+}
+
+.overlayCard__name {
+  margin-bottom: 10px;
+  font-size: 19px;
+}
+
+.overlayCard__description {
+  margin-bottom: 15px;
+  font-size: 14px;
+  line-height: 1.5;
+}

@@ -1,0 +1,18 @@
+{% set page = {
+  title: "overlayCard",
+  description: "Карточка с перекрывающим её при наведении содержимым 👻"
+} %}
+
+{% import "./templates.njk" as element %}
+
+{% extends fesg.components %}
+
+{% block body %}
+
+  {% section title="overlayCard" %}
+    {{ element.clear('БигБургер', '../assets/food-salad-healthy-lunch.jpg') }}
+  {% code %}
+    {{ element.clear('БигБургер') }}
+  {% endsection %}
+
+{% endblock %}
