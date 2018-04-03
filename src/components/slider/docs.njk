@@ -10,24 +10,13 @@
 
 {% block body %}
 
-{% set images = [
-  '../assets/food-salad-healthy-lunch.jpg',
-  '../assets/spices.jpeg',
-  '../assets/salad.jpeg',
-  '../assets/chair.jpg'
-]
-%}
-
-{% set modificators = {
-  slider: 'slider_notloaded slider_notloaded_preloader js-exampleSlider'
-}
-%}
+{% import "./data.njk" as data %}
 
 
   {% section title="slider" %}
   <div style="max-width: 500px;">
-    <div class="slider__outer detailCard__sliderOuter">
-      {{ element.clear(images, modificators) }}
+    <div class="slider__outer">
+      {{ element.clear(data.images, data.modificators) }}
       <div class="slider__toggler slider__toggler_left">
         <span>←</span>
       </div>
