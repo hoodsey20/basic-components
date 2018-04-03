@@ -1,0 +1,92 @@
+.detailCard_default {
+  .detailCard__mobileSliderContainer {
+    max-width: 550px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 10px;
+  }
+
+  .detailCard__sticker {
+    color: #fff;
+  }
+
+  .detailCard__sticker_sale {
+    background: #DE2626;
+  }
+
+  .detailCard__sticker_hit {
+    background: #3EB56D;
+  }
+
+  .detailCard__sticker_new {
+    background: #3E6EB5;
+  }
+
+  .detailCard__name {
+    margin-bottom: 5px;
+
+    font-weight: 600;
+    font-size: 24px;
+
+    color: #666666;
+  }
+
+  .detailCard__vendorCode {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #BDBDBD;
+  }
+
+  .detailCard__starsContainer {
+    margin-bottom: 10px;
+  }
+
+  .detailCard__priceContainer {
+    margin-bottom: 10px;
+  }
+
+  .detailCard__currentPrice {
+    display: block;
+
+    font-weight: 600;
+    line-height: normal;
+    font-size: 26px;
+    text-decoration-line: none;
+
+    color: #E55527;
+  }
+
+  .detailCard__oldPrice {
+    display: block;
+    font-size: 14px;
+    text-decoration-line: strikethrough;
+
+    color: #C4C4C4;
+  }
+
+  .detailCard__description {
+    margin-bottom: 10px;
+    font-size: 14px;
+
+    color: #666666;
+  }
+
+  .detailCard__data {
+    font-size: 14px;
+    color: #666666;
+  }
+
+  .detailCard__orderActionContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+  }
+
+  .detailCard__wildButton {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    margin: 10px auto;
+  }
+}

@@ -10,9 +10,11 @@
 {% block body %}
 
   {% section title="detailCard" %}
-    {{ element.clear('БигБургер', '../assets/food-salad-healthy-lunch.jpg') }}
+  <div style="max-width: 1170px; margin: 0 auto;">
+    {{ element.clear('detailCard_default') }}
+  </div>
   {% code %}
-    {{ element.clear('БигБургер', '../assets/food-salad-healthy-lunch.jpg') }}
+    {{ element.clear('detailCard_default') }}
   {% endsection %}
 
 {% endblock %}

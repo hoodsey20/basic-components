@@ -21,6 +21,9 @@ $laptopsScreen: 1270px;
 @import "counter/styles";
 @import "counter/_side";
 
+@import "detailCard/styles";
+@import "detailCard/_default";
+
 @import "dropdownMenu/styles";
 @import "dropdownMenu/_brdr";
 @import "dropdownMenu/_underlined";

@@ -1,21 +1,22 @@
 {% import "../stars/templates.njk" as stars %}
 {% import "../counter/templates.njk" as counter %}
 {% import "../button/templates.njk" as button %}
+{% import "../slider/templates.njk" as slider %}
+{% import "../slider/data.njk" as sliderData %}
 
-
-{% macro clear (name, src, modificator) %}
+{% macro clear (modificator) %}
 <div class="detailCard {{modificator}}">
   <div class="detailCard__wrap">
-
     <div class="detailCard__imgContainer">
-      <div class="slider__outer detailCard__sliderOuter">
-        <div class="slider__toggler slider__toggler_left">←</div>
-        <div class="slider__toggler slider__toggler_right">→</div>
-        <img
-          class="detailCard__img"
-          src="{{src}}"
-          alt="{{name}}"
-        >
+      <div class="slider__outer detailCard__mobileSliderContainer detailCard__sliderOuter">
+        {{slider.clear (sliderData.images, sliderData.modificators)}}
+        <div class="slider__toggler slider__toggler_left">
+          <span>←</span>
+        </div>
+        <div class="slider__toggler slider__toggler_right">
+          <span>→</span>
+        </div>
+
         <div class="detailCard__stickersContainer">
           <div class="detailCard__sticker detailCard__sticker_sale">
             <span>-20%</span>
@@ -50,7 +51,7 @@
 
     <div class="detailCard__contentContainer">
       <div class="detailCard__contentWrap">
-        <a href="#" class="detailCard__name">{{name}}</a>
+        <div class="detailCard__name">Название товара</div>
         <div class="detailCard__vendorCode">Артикул: 9908245</div>
         <div class="detailCard__starsContainer">
           {{ stars.bgr('3_', 'detailCard__stars') }}
