@@ -1,0 +1,18 @@
+{% set page = {
+  title: "detailCard",
+  description: "Детальная карточка товара 🍔"
+} %}
+
+{% import "./templates.njk" as element %}
+
+{% extends fesg.components %}
+
+{% block body %}
+
+  {% section title="detailCard" %}
+    {{ element.clear('БигБургер', '../assets/food-salad-healthy-lunch.jpg') }}
+  {% code %}
+    {{ element.clear('БигБургер', '../assets/food-salad-healthy-lunch.jpg') }}
+  {% endsection %}
+
+{% endblock %}

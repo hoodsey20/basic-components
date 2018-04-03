@@ -1,0 +1,93 @@
+{% import "../stars/templates.njk" as stars %}
+{% import "../counter/templates.njk" as counter %}
+{% import "../button/templates.njk" as button %}
+
+
+{% macro clear (name, src, modificator) %}
+<div class="detailCard {{modificator}}">
+  <div class="detailCard__wrap">
+
+    <div class="detailCard__imgContainer">
+      <div class="slider__outer detailCard__sliderOuter">
+        <div class="slider__toggler slider__toggler_left">←</div>
+        <div class="slider__toggler slider__toggler_right">→</div>
+        <img
+          class="detailCard__img"
+          src="{{src}}"
+          alt="{{name}}"
+        >
+        <div class="detailCard__stickersContainer">
+          <div class="detailCard__sticker detailCard__sticker_sale">
+            <span>-20%</span>
+          </div>
+          <div class="detailCard__sticker detailCard__sticker_hit">
+            <span>Хит</span>
+          </div>
+          <div class="detailCard__sticker detailCard__sticker_new">
+            <span>New</span>
+          </div>
+        </div>
+
+        <div class="detailCard__handlersContainer">
+          <button
+            type="button"
+            name="compare"
+            class="detailCard__handler"
+          >
+            <i class="fa fa-balance-scale"></i>
+          </button>
+          <button
+            type="button"
+            name="like"
+            class="detailCard__handler detailCard__handler_isActive"
+          >
+            <i class="fa fa-heart"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="detailCard__contentContainer">
+      <div class="detailCard__contentWrap">
+        <a href="#" class="detailCard__name">{{name}}</a>
+        <div class="detailCard__vendorCode">Артикул: 9908245</div>
+        <div class="detailCard__starsContainer">
+          {{ stars.bgr('3_', 'detailCard__stars') }}
+        </div>
+        <div class="detailCard__priceContainer">
+          <ins class="detailCard__currentPrice">43 173 руб.</ins>
+          <del class="detailCard__oldPrice">47 970 руб.</del>
+        </div>
+        <div class="detailCard__description">
+          котлета, соус Чили мясной, соус Smoke, салат Айсберг, лечо из сладкого перца, сыр Чеддер, луковые кольца
+        </div>
+
+        <div class="detailCard__data">
+          <div class="detailCard__dataItem">
+            <span class="detailCard__dataItemName">Размер:</span>
+            <span class="detailCard__dataItemValue">20х8 см</span>
+          </div>
+          <div class="detailCard__dataItem">
+            <span class="detailCard__dataItemName">Вес:</span>
+            <span class="detailCard__dataItemValue">350 г</span>
+          </div>
+          <div class="detailCard__dataItem">
+            <span class="detailCard__dataItemName">Цвет:</span>
+            <span class="detailCard__dataItemValue">синий</span>
+          </div>
+        </div>
+
+        <div class="detailCard__orderActionContainer">
+          {{ counter.clear('detailCard_counter') }}
+          {{ button.clear('В корзину', 'button_brdr button_radius') }}
+        </div>
+
+        {{ button.clear('Купить в 1 клик', 'button_bgr button_radius detailCard__wildButton') }}
+      </div>
+
+    </div>
+
+  </div>
+</div>
+{% endmacro %}
