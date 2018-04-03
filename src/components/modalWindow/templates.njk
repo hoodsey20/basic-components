@@ -18,6 +18,7 @@
 document.addEventListener('DOMContentLoaded', function () {
   setTimeout(function() {
     document.querySelector('.js-showExampleModal').addEventListener('click', function() {
+      window.exampleModal = $('[data-remodal-id=modal-example]').remodal();
       window.exampleModal.open();
     })
   }, 2000);
