@@ -23,7 +23,7 @@ $togglerSize: 50px;
 
 .slider__parentSpreader {
   position: relative;
-  padding-bottom: 50%;
+  padding-bottom: 80%;
 }
 
 .slider__childSpreader {
@@ -54,6 +54,9 @@ $togglerSize: 50px;
   background-color: rgba(#000, 0.4);
   border-radius: 50%;
   cursor: pointer;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
 
   span {
     position: absolute;
