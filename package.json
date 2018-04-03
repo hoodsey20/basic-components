@@ -43,6 +43,7 @@
   },
   "dependencies": {
     "jquery": "^3.2.1",
+    "lightslider": "^1.1.6",
     "normalize.css": "^7.0.0",
     "object-fit-images": "^3.2.3",
     "remodal": "^1.1.1"
