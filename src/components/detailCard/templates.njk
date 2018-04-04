@@ -9,7 +9,7 @@
   <div class="detailCard__wrap">
     <div class="detailCard__imgContainer">
       <div class="slider__outer detailCard__mobileSliderContainer detailCard__sliderOuter">
-        {{slider.clear (sliderData.images, sliderData.modificators)}}
+        {{slider.clear (sliderData.images, sliderData.detailCardSliderModificators, sliderData.imageThumbs)}}
         <div class="slider__toggler slider__toggler_left">
           <span>←</span>
         </div>
@@ -91,4 +91,69 @@
 
   </div>
 </div>
+
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function () {
+  var detailSliderProps = {
+    pager: true
+  };
+
+  var detailSliderBigScreenProps = {
+    pager: true,
+    gallery: true,
+    item: 1,
+    vThumbWidth: 50,
+    thumbItem: 8,
+    thumbMargin: 4
+  };
+
+  var buildToDesktop = function () {
+    window.detailCardSlider = window.initLightSlider(
+      $('.js-detailCardSlider'),
+      false,
+      detailSliderBigScreenProps
+    );
+  };
+
+  var buildToMobile = function () {
+    window.detailCardSlider = window.initLightSlider(
+      $('.js-detailCardSlider'),
+      false,
+      detailSliderProps
+    );
+  };
+
+  var BIG_SCREEN_RESIZE_POINT = 1400;
+
+  var detailSliderHandler = function (format) {
+    if (!window.detailCardSlider) return;
+    window.detailCardSlider.destroy();
+
+    switch (format) {
+      case 'MOBILE':
+        buildToMobile();
+        break;
+      case 'DESKTOP':
+        buildToDesktop();
+        break;
+    }
+  };
+
+  setTimeout(function () {
+    var initialFormat = window.outerWidth < BIG_SCREEN_RESIZE_POINT ? 'MOBILE' : 'DESKTOP';
+    initialFormat === 'MOBILE' ? buildToMobile() : buildToDesktop();
+    var currentFormat = initialFormat;
+
+    window.addEventListener('resize', function () {
+      if (window.outerWidth < BIG_SCREEN_RESIZE_POINT && currentFormat === 'DESKTOP') {
+        currentFormat = 'MOBILE';
+        detailSliderHandler(currentFormat);
+      } else if (window.outerWidth >= BIG_SCREEN_RESIZE_POINT && currentFormat === 'MOBILE') {
+        currentFormat = 'DESKTOP';
+        detailSliderHandler(currentFormat);
+      }
+    });
+  }, 2000);
+});
+</script>
 {% endmacro %}

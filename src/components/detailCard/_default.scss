@@ -1,4 +1,22 @@
+$laptopsScreen2: 1400px;
+
+
 .detailCard_default {
+  @media screen and (min-width: $laptopsScreen2) {
+    .detailCard__imgContainer {
+      display: inline-block;
+      width: 570px;
+      vertical-align: top;
+    }
+
+    .detailCard__contentContainer {
+      display: inline-block;
+      width: calc(100% - 570px);
+      padding-left: 3%;
+      vertical-align: top;
+    }
+  }
+
   .detailCard__mobileSliderContainer {
     max-width: 550px;
     margin-right: auto;

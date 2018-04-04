@@ -1,18 +1,34 @@
-{% macro clear (images, modificators) %}
+{% macro clear (images, modificators, thumbs) %}
 {% set firsImageSrc = images[0] %}
 <ul class="slider {{modificators.slider}}">
   {% for sliderImageSrc in images %}
-    <li class="slider__item {{modificators.sliderItem}}">
+    <li class="slider__item {{modificators.sliderItem}}" data-thumb={{thumbs[loop.index - 1]}}>
       <div class="slider__parentSpreader">
         <div class="slider__childSpreader">
           {% if loop.index == 1 %}
-          <img class="slider__img {{modificators.sliderImg}}" src="{{sliderImageSrc}}" alt="">
+          <img
+            class="slider__img {{modificators.sliderImg}}"
+            src="{{sliderImageSrc}}"
+            alt=""
+          >
           {% else %}
-          <img class="slider__img {{modificators.sliderImg}}" src="{{firsImageSrc}}"  data-src="{{sliderImageSrc}}" alt="">
+          <img
+            class="slider__img {{modificators.sliderImg}}"
+            src="{{firsImageSrc}}"
+            data-src="{{sliderImageSrc}}"
+            alt=""
+          >
           {% endif %}
         </div>
       </div>
     </li>
   {% endfor %}
 </ul>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function () {
+  setTimeout(function () {
+    window.initLightSlider($('.js-exampleSlider'));
+  }, 2000)
+});
+</script>
 {% endmacro %}

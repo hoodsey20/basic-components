@@ -79,15 +79,9 @@ window.LSDefaultProps = {
   }
 };
 
-var initLightSlider = function (sliderItem, parentProps, newProps) {
+window.initLightSlider = function (sliderItem, parentProps, newProps) {
   if (!sliderItem.length) return;
   var instanceProps = parentProps || window.LSDefaultProps;
   var finalProps = newProps ? $.extend(true, {}, instanceProps, newProps) : instanceProps;
   return sliderItem.lightSlider(finalProps);
 }
-
-document.addEventListener('DOMContentLoaded', function () {
-  setTimeout(function () {
-    initLightSlider($('.js-exampleSlider'));
-  }, 2000);
-});
