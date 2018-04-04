@@ -1,4 +1,4 @@
-$imgHeight: 280px;
+$imgRelativeHeight: 100%;
 
 $quickViewBackground: rgba(3, 3, 3, 0.6);
 $quickViewColor: #fff;
@@ -14,6 +14,10 @@ $handlerIconSize: 22px;
   max-width: 300px;
 }
 
+.miniCard__wrap {
+  font-size: 0;
+}
+
 .miniCard__imgContainer {
   position: relative;
   overflow: hidden;
@@ -22,9 +26,23 @@ $handlerIconSize: 22px;
 .miniCard__imgLink {
   display: block;
   overflow: hidden;
-  height: $imgHeight;
   width: 100%;
   font-size: 0;
+}
+
+.miniCard__imgParentSpreader {
+  position: relative;
+  padding-bottom: $imgRelativeHeight;
+}
+
+.miniCard__imgChildSpreader {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .miniCard__img {
@@ -119,6 +137,10 @@ $handlerIconSize: 22px;
   .fa-heart {
     color: #DE2626;
   }
+}
+
+.miniCard__contentWrap {
+  font-size: 14px;
 }
 
 .miniCard__name {
