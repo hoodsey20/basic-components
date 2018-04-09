@@ -58,7 +58,6 @@
           <i class="fa fa-heart"></i>
         </button>
       </div>
-
     </div>
 
     <div class="miniCard__contentContainer">
@@ -69,8 +68,8 @@
           {{ stars.bgr('3_', 'miniCard__stars') }}
         </div>
         <div class="miniCard__priceContainer">
-          <ins class="miniCard__currentPrice">43 173 руб.</ins>
           <del class="miniCard__oldPrice">47 970 руб.</del>
+          <ins class="miniCard__currentPrice">43 173 руб.</ins>
         </div>
         <div class="miniCard__description">
           котлета, соус Чили мясной, соус Smoke, салат Айсберг, лечо из сладкого перца, сыр Чеддер, луковые кольца
@@ -91,14 +90,28 @@
           </div>
         </div>
 
+      </div>
+    </div>
+
+    <!--noindex-->
+    <div class="miniCard__flatPriceWrap">
+      <div class="miniCard__priceContainer">
+        <del class="miniCard__oldPrice">47 970 руб.</del>
+        <ins class="miniCard__currentPrice">43 173 руб.</ins>
+      </div>
+    </div>
+    <!--/noindex-->
+
+
+    <div class="miniCard__footer">
+      <div class="miniCard__footerWrap">
         <div class="miniCard__orderActionContainer">
           {{ counter.clear('miniCard_counter') }}
-          {{ button.clear('В корзину', 'button_brdr button_radius') }}
+          {{ button.clear('В корзину', 'button_brdr button_radius miniCard__basketButton') }}
         </div>
 
         {{ button.clear('Купить в 1 клик', 'button_bgr button_radius miniCard__wildButton') }}
       </div>
-
     </div>
 
   </div>

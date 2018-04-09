@@ -1,8 +1,33 @@
 .miniCard_flat {
+
+  @media screen and (min-width: $laptopsScreen) {
+    max-width: 100%;
+    display: block;
+  }
+
   .miniCard__imgContainer {
     display: inline-block;
     vertical-align: top;
     width: 38%;
+
+    @media screen and (min-width: $laptopsScreen) {
+      width: 11.5%;
+    }
+
+    .miniCard__handlersContainer {
+      position: static;
+      display: flex;
+      justify-content: space-between;
+      padding-top: 10%;
+    }
+
+    .miniCard__stickersContainer {
+      display: none;
+    }
+
+    .miniCard__quickViewOverlay {
+      display: none;
+    }
   }
 
   .miniCard__contentContainer {
@@ -10,5 +35,46 @@
     vertical-align: top;
     width: 62%;
     padding-left: 8.5%;
+
+    @media screen and (min-width: $laptopsScreen) {
+      width: 45%;
+      padding: 0 2%;
+    }
+
+    .miniCard__priceContainer {
+      @media screen and (min-width: $laptopsScreen) {
+        display: none;
+      }
+    }
+  }
+
+  .miniCard__oldPrice {
+    display: block;
+  }
+
+  .miniCard__currentPrice {
+    display: block;
+  }
+
+  .miniCard__flatPriceWrap {
+    @media screen and (min-width: $laptopsScreen) {
+      display: inline-block;
+      width: 20%;
+      vertical-align: top;
+    }
+  }
+
+  .miniCard__footer {
+    @media screen and (min-width: $laptopsScreen) {
+      display: inline-block;
+      width: 23.5%;
+      vertical-align: top;
+    }
+  }
+
+  .miniCard__orderActionContainer {
+    @media screen and (min-width: $laptopsScreen) {
+      flex-direction: column;
+    }
   }
 }
