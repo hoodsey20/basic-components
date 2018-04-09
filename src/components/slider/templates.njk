@@ -1,5 +1,5 @@
 {% macro clear (images, modificators, thumbs) %}
-{% set firsImageSrc = images[0] %}
+{% set firstImageSrc = images[0] %}
 <ul class="slider {{modificators.slider}}">
   {% for sliderImageSrc in images %}
     <li class="slider__item {{modificators.sliderItem}}" data-thumb={{thumbs[loop.index - 1]}}>
@@ -9,13 +9,15 @@
           <img
             class="slider__img {{modificators.sliderImg}}"
             src="{{sliderImageSrc}}"
+            data-magnify-src="{{sliderImageSrc}}"
             alt=""
           >
           {% else %}
           <img
             class="slider__img {{modificators.sliderImg}}"
-            src="{{firsImageSrc}}"
+            src="{{firstImageSrc}}"
             data-src="{{sliderImageSrc}}"
+            data-magnify-src="{{sliderImageSrc}}"
             alt=""
           >
           {% endif %}
