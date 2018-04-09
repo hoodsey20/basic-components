@@ -1,8 +1,6 @@
 $imgRelativeHeight: 100%;
-
 $quickViewBackground: rgba(3, 3, 3, 0.6);
 $quickViewColor: #fff;
-
 $handlerButtonSize: 45px;
 $handlerButtonBackground: rgba(196, 196, 196, 0.8);
 $handlerIconSize: 22px;
@@ -74,12 +72,9 @@ $handlerIconSize: 22px;
   bottom: -100%;
   width: 100%;
   padding: 10px 0;
-
   text-align: center;
-
   background-color: $quickViewBackground;
   color: $quickViewColor;
-
   transition: all 0.6s linear;
 }
 
@@ -107,9 +102,7 @@ $handlerIconSize: 22px;
   margin-bottom: 5px;
   border: 0;
   padding: 0;
-
   text-align: center;
-
   background-color: $handlerButtonBackground;
   border-radius: 50%;
 

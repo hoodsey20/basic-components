@@ -2,118 +2,104 @@
 {% import "../counter/templates.njk" as counter %}
 {% import "../button/templates.njk" as button %}
 
+{% macro clear(name, src, modificator) %}
+  <div class="miniCard {{modificator}}">
+    <div class="miniCard__wrap">
 
-{% macro clear (name, src, modificator) %}
-<div class="miniCard {{modificator}}">
-  <div class="miniCard__wrap">
+      <div class="miniCard__imgContainer">
 
-    <div class="miniCard__imgContainer">
-
-      <a href="#" class="miniCard__imgLink">
-        <div class="miniCard__imgParentSpreader">
-          <div class="miniCard__imgChildSpreader">
-            <img
-              class="miniCard__img"
-              src="{{src}}"
-              alt="{{name}}"
-            >
+        <a href="#" class="miniCard__imgLink">
+          <div class="miniCard__imgParentSpreader">
+            <div class="miniCard__imgChildSpreader">
+              <img class="miniCard__img" src="{{src}}" alt="{{name}}">
+            </div>
           </div>
-        </div>
         </a>
 
-      <div class="miniCard__quickViewOverlay">
-        <div class="miniCard_quickViewIcon">
-          <i class="fa fa-eye"></i>
+        <div class="miniCard__quickViewOverlay">
+          <div class="miniCard_quickViewIcon">
+            <i class="fa fa-eye"></i>
+          </div>
+          <div class="miniCard__quickViewTitle">
+            Быстрый просмотр
+          </div>
         </div>
-        <div class="miniCard__quickViewTitle">
-          Быстрый просмотр
+
+        <div class="miniCard__stickersContainer">
+          <div class="miniCard__sticker miniCard__sticker_sale">
+            <span>-20%</span>
+          </div>
+          <div class="miniCard__sticker miniCard__sticker_hit">
+            <span>Хит</span>
+          </div>
+          <div class="miniCard__sticker miniCard__sticker_new">
+            <span>New</span>
+          </div>
+        </div>
+
+        <div class="miniCard__handlersContainer">
+          <button type="button" name="compare" class="miniCard__handler">
+            <i class="fa fa-balance-scale"></i>
+          </button>
+          <button type="button" name="like" class="miniCard__handler miniCard__handler_isActive">
+            <i class="fa fa-heart"></i>
+          </button>
         </div>
       </div>
 
-      <div class="miniCard__stickersContainer">
-        <div class="miniCard__sticker miniCard__sticker_sale">
-          <span>-20%</span>
-        </div>
-        <div class="miniCard__sticker miniCard__sticker_hit">
-          <span>Хит</span>
-        </div>
-        <div class="miniCard__sticker miniCard__sticker_new">
-          <span>New</span>
+      <div class="miniCard__contentContainer">
+        <div class="miniCard__contentWrap">
+          <a href="#" class="miniCard__name">{{name}}</a>
+          <div class="miniCard__vendorCode">Артикул: 9908245</div>
+          <div class="minicard__starsContainer">
+            {{ stars.bgr('3_', 'miniCard__stars') }}
+          </div>
+          <div class="miniCard__priceContainer">
+            <del class="miniCard__oldPrice">47 970 руб.</del>
+            <ins class="miniCard__currentPrice">43 173 руб.</ins>
+          </div>
+          <div class="miniCard__description">
+            котлета, соус Чили мясной, соус Smoke, салат Айсберг, лечо из сладкого перца, сыр Чеддер, луковые кольца
+          </div>
+
+          <div class="miniCard__data">
+            <div class="miniCard__dataItem">
+              <span class="miniCard__dataItemName">Размер:</span>
+              <span class="miniCard__dataItemValue">20х8 см</span>
+            </div>
+            <div class="miniCard__dataItem">
+              <span class="miniCard__dataItemName">Вес:</span>
+              <span class="miniCard__dataItemValue">350 г</span>
+            </div>
+            <div class="miniCard__dataItem">
+              <span class="miniCard__dataItemName">Цвет:</span>
+              <span class="miniCard__dataItemValue">синий</span>
+            </div>
+          </div>
+
         </div>
       </div>
 
-      <div class="miniCard__handlersContainer">
-        <button
-          type="button"
-          name="compare"
-          class="miniCard__handler"
-        >
-          <i class="fa fa-balance-scale"></i>
-        </button>
-        <button
-          type="button"
-          name="like"
-          class="miniCard__handler miniCard__handler_isActive"
-        >
-          <i class="fa fa-heart"></i>
-        </button>
-      </div>
-    </div>
-
-    <div class="miniCard__contentContainer">
-      <div class="miniCard__contentWrap">
-        <a href="#" class="miniCard__name">{{name}}</a>
-        <div class="miniCard__vendorCode">Артикул: 9908245</div>
-        <div class="minicard__starsContainer">
-          {{ stars.bgr('3_', 'miniCard__stars') }}
-        </div>
+      <!--noindex-->
+      <div class="miniCard__flatPriceWrap">
         <div class="miniCard__priceContainer">
           <del class="miniCard__oldPrice">47 970 руб.</del>
           <ins class="miniCard__currentPrice">43 173 руб.</ins>
         </div>
-        <div class="miniCard__description">
-          котлета, соус Чили мясной, соус Smoke, салат Айсберг, лечо из сладкого перца, сыр Чеддер, луковые кольца
-        </div>
-
-        <div class="miniCard__data">
-          <div class="miniCard__dataItem">
-            <span class="miniCard__dataItemName">Размер:</span>
-            <span class="miniCard__dataItemValue">20х8 см</span>
-          </div>
-          <div class="miniCard__dataItem">
-            <span class="miniCard__dataItemName">Вес:</span>
-            <span class="miniCard__dataItemValue">350 г</span>
-          </div>
-          <div class="miniCard__dataItem">
-            <span class="miniCard__dataItemName">Цвет:</span>
-            <span class="miniCard__dataItemValue">синий</span>
-          </div>
-        </div>
-
       </div>
-    </div>
+      <!--/noindex-->
 
-    <!--noindex-->
-    <div class="miniCard__flatPriceWrap">
-      <div class="miniCard__priceContainer">
-        <del class="miniCard__oldPrice">47 970 руб.</del>
-        <ins class="miniCard__currentPrice">43 173 руб.</ins>
-      </div>
-    </div>
-    <!--/noindex-->
+      <div class="miniCard__footer">
+        <div class="miniCard__footerWrap">
+          <div class="miniCard__orderActionContainer">
+            {{ counter.clear('miniCard_counter') }}
+            {{ button.clear('В корзину', 'button_brdr button_radius miniCard__basketButton') }}
+          </div>
 
-
-    <div class="miniCard__footer">
-      <div class="miniCard__footerWrap">
-        <div class="miniCard__orderActionContainer">
-          {{ counter.clear('miniCard_counter') }}
-          {{ button.clear('В корзину', 'button_brdr button_radius miniCard__basketButton') }}
+          {{ button.clear('Купить в 1 клик', 'button_bgr button_radius miniCard__wildButton') }}
         </div>
-
-        {{ button.clear('Купить в 1 клик', 'button_bgr button_radius miniCard__wildButton') }}
       </div>
-    </div>
 
+    </div>
   </div>
-</div>
 {% endmacro %}

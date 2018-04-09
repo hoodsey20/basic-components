@@ -4,156 +4,145 @@
 {% import "../slider/templates.njk" as slider %}
 {% import "../slider/data.njk" as sliderData %}
 
-{% macro clear (modificator) %}
-<div class="detailCard {{modificator}}">
-  <div class="detailCard__wrap">
-    <div class="detailCard__imgContainer">
-      <div class="slider__outer detailCard__mobileSliderContainer detailCard__sliderOuter">
-        {{slider.clear (sliderData.images, sliderData.detailCardSliderModificators, sliderData.imageThumbs)}}
-        <div class="slider__toggler slider__toggler_left">
-          <span>←</span>
-        </div>
-        <div class="slider__toggler slider__toggler_right">
-          <span>→</span>
-        </div>
+{% macro clear(modificator) %}
+  <div class="detailCard {{modificator}}">
+    <div class="detailCard__wrap">
+      <div class="detailCard__imgContainer">
+        <div class="slider__outer detailCard__mobileSliderContainer detailCard__sliderOuter">
+          {{slider.clear (sliderData.images, sliderData.detailCardSliderModificators, sliderData.imageThumbs)}}
+          <div class="slider__toggler slider__toggler_left">
+            <span>←</span>
+          </div>
+          <div class="slider__toggler slider__toggler_right">
+            <span>→</span>
+          </div>
 
-        <div class="detailCard__stickersContainer">
-          <div class="detailCard__sticker detailCard__sticker_sale">
-            <span>-20%</span>
+          <div class="detailCard__stickersContainer">
+            <div class="detailCard__sticker detailCard__sticker_sale">
+              <span>-20%</span>
+            </div>
+            <div class="detailCard__sticker detailCard__sticker_hit">
+              <span>Хит</span>
+            </div>
+            <div class="detailCard__sticker detailCard__sticker_new">
+              <span>New</span>
+            </div>
           </div>
-          <div class="detailCard__sticker detailCard__sticker_hit">
-            <span>Хит</span>
-          </div>
-          <div class="detailCard__sticker detailCard__sticker_new">
-            <span>New</span>
-          </div>
-        </div>
 
-        <div class="detailCard__handlersContainer">
-          <button
-            type="button"
-            name="compare"
-            class="detailCard__handler"
-          >
-            <i class="fa fa-balance-scale"></i>
-          </button>
-          <button
-            type="button"
-            name="like"
-            class="detailCard__handler detailCard__handler_isActive"
-          >
-            <i class="fa fa-heart"></i>
-          </button>
+          <div class="detailCard__handlersContainer">
+            <button type="button" name="compare" class="detailCard__handler">
+              <i class="fa fa-balance-scale"></i>
+            </button>
+            <button type="button" name="like" class="detailCard__handler detailCard__handler_isActive">
+              <i class="fa fa-heart"></i>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="detailCard__contentContainer">
+        <div class="detailCard__contentWrap">
+          <div class="detailCard__name">Название товара</div>
+          <div class="detailCard__vendorCode">Артикул: 9908245</div>
+          <div class="detailCard__starsContainer">
+            {{ stars.bgr('3_', 'detailCard__stars') }}
+          </div>
+          <div class="detailCard__priceContainer">
+            <ins class="detailCard__currentPrice">43 173 руб.</ins>
+            <del class="detailCard__oldPrice">47 970 руб.</del>
+          </div>
+          <div class="detailCard__description">
+            котлета, соус Чили мясной, соус Smoke, салат Айсберг, лечо из сладкого перца, сыр Чеддер, луковые кольца
+          </div>
+
+          <div class="detailCard__data">
+            <div class="detailCard__dataItem">
+              <span class="detailCard__dataItemName">Размер:</span>
+              <span class="detailCard__dataItemValue">20х8 см</span>
+            </div>
+            <div class="detailCard__dataItem">
+              <span class="detailCard__dataItemName">Вес:</span>
+              <span class="detailCard__dataItemValue">350 г</span>
+            </div>
+            <div class="detailCard__dataItem">
+              <span class="detailCard__dataItemName">Цвет:</span>
+              <span class="detailCard__dataItemValue">синий</span>
+            </div>
+          </div>
+
+          <div class="detailCard__orderActionContainer">
+            {{ counter.clear('detailCard_counter') }}
+            {{ button.clear('В корзину', 'button_brdr button_radius') }}
+          </div>
+
+          {{ button.clear('Купить в 1 клик', 'button_bgr button_radius detailCard__wildButton') }}
         </div>
 
       </div>
-    </div>
-
-    <div class="detailCard__contentContainer">
-      <div class="detailCard__contentWrap">
-        <div class="detailCard__name">Название товара</div>
-        <div class="detailCard__vendorCode">Артикул: 9908245</div>
-        <div class="detailCard__starsContainer">
-          {{ stars.bgr('3_', 'detailCard__stars') }}
-        </div>
-        <div class="detailCard__priceContainer">
-          <ins class="detailCard__currentPrice">43 173 руб.</ins>
-          <del class="detailCard__oldPrice">47 970 руб.</del>
-        </div>
-        <div class="detailCard__description">
-          котлета, соус Чили мясной, соус Smoke, салат Айсберг, лечо из сладкого перца, сыр Чеддер, луковые кольца
-        </div>
-
-        <div class="detailCard__data">
-          <div class="detailCard__dataItem">
-            <span class="detailCard__dataItemName">Размер:</span>
-            <span class="detailCard__dataItemValue">20х8 см</span>
-          </div>
-          <div class="detailCard__dataItem">
-            <span class="detailCard__dataItemName">Вес:</span>
-            <span class="detailCard__dataItemValue">350 г</span>
-          </div>
-          <div class="detailCard__dataItem">
-            <span class="detailCard__dataItemName">Цвет:</span>
-            <span class="detailCard__dataItemValue">синий</span>
-          </div>
-        </div>
-
-        <div class="detailCard__orderActionContainer">
-          {{ counter.clear('detailCard_counter') }}
-          {{ button.clear('В корзину', 'button_brdr button_radius') }}
-        </div>
-
-        {{ button.clear('Купить в 1 клик', 'button_bgr button_radius detailCard__wildButton') }}
-      </div>
 
     </div>
-
   </div>
-</div>
 
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', function () {
-  var detailSliderProps = {
-    pager: true
-  };
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function () {
+      var detailSliderProps = {
+        pager: true
+      };
 
-  var detailSliderBigScreenProps = {
-    pager: true,
-    gallery: true,
-    item: 1,
-    vThumbWidth: 50,
-    thumbItem: 8,
-    thumbMargin: 4
-  };
+      var detailSliderBigScreenProps = {
+        pager: true,
+        gallery: true,
+        item: 1,
+        vThumbWidth: 50,
+        thumbItem: 8,
+        thumbMargin: 4
+      };
 
-  var buildToDesktop = function () {
-    window.detailCardSlider = window.initLightSlider(
-      $('.js-detailCardSlider'),
-      false,
-      detailSliderBigScreenProps
-    );
-  };
+      var buildToDesktop = function () {
+        window.detailCardSlider = window.initLightSlider($('.js-detailCardSlider'), false, detailSliderBigScreenProps);
+      };
 
-  var buildToMobile = function () {
-    window.detailCardSlider = window.initLightSlider(
-      $('.js-detailCardSlider'),
-      false,
-      detailSliderProps
-    );
-  };
+      var buildToMobile = function () {
+        window.detailCardSlider = window.initLightSlider($('.js-detailCardSlider'), false, detailSliderProps);
+      };
 
-  var BIG_SCREEN_RESIZE_POINT = 1400;
+      var BIG_SCREEN_RESIZE_POINT = 1400;
 
-  var detailSliderHandler = function (format) {
-    if (!window.detailCardSlider) return;
-    window.detailCardSlider.destroy();
+      var detailSliderHandler = function (format) {
+        if (!window.detailCardSlider)
+          return;
+        window.detailCardSlider.destroy();
 
-    switch (format) {
-      case 'MOBILE':
-        buildToMobile();
-        break;
-      case 'DESKTOP':
-        buildToDesktop();
-        break;
-    }
-  };
+        switch (format) {
+          case 'MOBILE':
+            buildToMobile();
+            break;
+          case 'DESKTOP':
+            buildToDesktop();
+            break;
+        }
+      };
 
-  setTimeout(function () {
-    var initialFormat = window.outerWidth < BIG_SCREEN_RESIZE_POINT ? 'MOBILE' : 'DESKTOP';
-    initialFormat === 'MOBILE' ? buildToMobile() : buildToDesktop();
-    var currentFormat = initialFormat;
+      setTimeout(function () {
+        var initialFormat = window.outerWidth < BIG_SCREEN_RESIZE_POINT
+          ? 'MOBILE'
+          : 'DESKTOP';
+        initialFormat === 'MOBILE'
+          ? buildToMobile()
+          : buildToDesktop();
+        var currentFormat = initialFormat;
 
-    window.addEventListener('resize', function () {
-      if (window.outerWidth < BIG_SCREEN_RESIZE_POINT && currentFormat === 'DESKTOP') {
-        currentFormat = 'MOBILE';
-        detailSliderHandler(currentFormat);
-      } else if (window.outerWidth >= BIG_SCREEN_RESIZE_POINT && currentFormat === 'MOBILE') {
-        currentFormat = 'DESKTOP';
-        detailSliderHandler(currentFormat);
-      }
+        window.addEventListener('resize', function () {
+          if (window.outerWidth < BIG_SCREEN_RESIZE_POINT && currentFormat === 'DESKTOP') {
+            currentFormat = 'MOBILE';
+            detailSliderHandler(currentFormat);
+          } else if (window.outerWidth >= BIG_SCREEN_RESIZE_POINT && currentFormat === 'MOBILE') {
+            currentFormat = 'DESKTOP';
+            detailSliderHandler(currentFormat);
+          }
+        });
+      }, 2000);
     });
-  }, 2000);
-});
-</script>
+  </script>
 {% endmacro %}
