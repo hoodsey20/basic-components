@@ -1,15 +1,17 @@
-$bgr: #1a4884;
-$bgrActive: #2f80ed;
-
+$bgr: #fff;
+$bgrActive: #ED1F1F;
+$checkboxBorderSize: 2px;
 $checkMarkAreaRadius: 2px;
-$checkMarkAreaSize: 15px;
+$checkMarkAreaSize: 22px;
 $checkMarkColor: #fff;
-$checkMarkTextSize: 10px;
+$checkMarkTextSize: $checkMarkAreaSize - $checkboxBorderSize * 2;
+
+$checkMarkBorderColor: #C4C4C4;
 
 $textPadding: 5px;
 
 $color: #333;
-$textSize: 14px;
+$textSize: $checkMarkTextSize;
 
 .checkbox {
   display: inline-block;
@@ -19,16 +21,33 @@ $textSize: 14px;
 }
 
 .checkbox__pseudo {
+  position: relative;
   display: inline-block;
   width: $checkMarkAreaSize;
   height: $checkMarkAreaSize;
   vertical-align: top;
+  border: $checkboxBorderSize solid $checkMarkBorderColor;
 
   font-size: 0;
   text-align: center;
 
   border-radius: $checkMarkAreaRadius;
   background-color: $bgr;
+
+  &:after {
+    content: ' ';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+
+    opacity: 0;
+    background-color: rgba($bgrActive, 0.4);
+    border-radius: 50%;
+
+    transition: opacity 1s linear;
+  }
 }
 
 .checkbox__input {
@@ -57,14 +76,37 @@ $textSize: 14px;
 }
 
 .checkbox__input:checked + .checkbox__pseudo {
+  border: 2px solid $bgrActive;
   background-color: $bgrActive;
 
   &:before {
+    position: relative;
+    z-index: 1;
     content: '\2713';
     display: inline-block;
     vertical-align: middle;
     font-size: $checkMarkTextSize;
-    line-height: $checkMarkAreaSize;
+    line-height: $checkMarkAreaSize - $checkboxBorderSize * 2;
     color: $checkMarkColor;
+  }
+}
+
+.checkbox__input:focus + .checkbox__pseudo {
+  &:after {
+    animation: fadeInAndOut 1s ease;
+  }
+}
+
+@keyframes fadeInAndOut {
+  0% {
+    opacity: 0;
+  }
+
+  35% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
   }
 }
