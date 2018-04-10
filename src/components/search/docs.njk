@@ -1,0 +1,18 @@
+{% set page = {
+  title: "Поиск",
+  description: "Поиск по сайту 🔍"
+} %}
+
+{% import "./templates.njk" as element %}
+
+{% extends fesg.components %}
+
+{% block body %}
+
+  {% section title="search" %}
+    {{ element.bgr() }}
+  {% code %}
+    {{ element.bgr() }}
+  {% endsection %}
+
+{% endblock %}

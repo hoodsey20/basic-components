@@ -1,0 +1,30 @@
+$buttonHeight: 42px;
+$iconFontSize: 22px;
+$iconColor: #ED1F1F;
+
+.search__form {
+  position: relative;
+}
+
+.search__input {
+  width: 100%;
+  padding-right: $buttonHeight;
+}
+
+.search__button {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: $buttonHeight;
+  height: 100%;
+
+  font-size: $iconFontSize;
+
+  color: $iconColor;
+  background-color: transparent;
+
+  &:before {
+    content: '\1F50E';
+  }
+}
