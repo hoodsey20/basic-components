@@ -1,20 +1,24 @@
+$backgroundColor: #ED1F1F;
+$textColor: #fff;
+$ativeBorderColor: #F75454;
+
 .button_bgr {
-  background-color: $blue;
-  color: $white;
+  background-color: $backgroundColor;
+  color: $textColor;
 
   &:hover {
-    color: #fff;
-    background-color: $darkblue;
+    color: $textColor;
+    background-color: $ativeBorderColor;
   }
 
   &:focus {
-    color: #fff;
-    background-color: $darkblue;
+    color: $textColor;
+    background-color: $ativeBorderColor;
   }
 
   &:active {
-    color: $white;
-    background-color: $darkerblue;
+    color: $textColor;
+    background-color: $ativeBorderColor;
     outline: 0;
   }
 }

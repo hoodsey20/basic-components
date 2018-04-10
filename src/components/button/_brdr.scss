@@ -1,21 +1,24 @@
+$borderColor: #F75454;
+$ativeBorderColor: #F75454;
+
 .button_brdr {
-  border: 2px solid $blue;
+  border-color: $borderColor;
 
   &:hover {
     color: #fff;
-    background-color: $darkblue;
-    border: 2px solid transparent;
+    background-color: $ativeBorderColor;
+    border-color: $borderColor;
   }
 
   &:focus {
     color: #fff;
-    background-color: $darkblue;
-    border: 2px solid $blue;
+    background-color: $ativeBorderColor;
+    border-color: $borderColor;
   }
 
   &:active {
     color: #fff;
-    background-color: $darkerblue;
-    border: 2px solid transparent;
+    background-color: $ativeBorderColor;
+    border-color: transparent;
   }
 }

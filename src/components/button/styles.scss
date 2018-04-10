@@ -1,36 +1,41 @@
 $white: #fff;
-$blue: #2f80ed;
-$darkblue: #2361b2;
-$darkerblue: #1a4884;
+$activeColor: #C91B1B;
+$ativeBorderColor: #F75454;
+
+$fontSize: 18px;
+$verticalPadding: 16px;
+$horizontalPadding: 30px;
+
+$borderSize: 4px;
 
 .button {
   display: inline-block;
-  padding: 12px 40px;
-  border: 2px solid transparent;
+  padding: $verticalPadding $horizontalPadding;
+  border: $borderSize solid transparent;
 
-  font-size: 14px;
+  font-size: $fontSize;
   line-height: 1.2;
   text-decoration: none;
 
   background-color: transparent;
-  color: $blue;
+  color: $activeColor;
   border-radius: 0;
   outline: 0;
 
   &:hover {
     color: #fff;
-    background-color: $blue;
+    background-color: $activeColor;
   }
 
   &:focus {
     color: #fff;
-    background-color: $blue;
-    border: 2px solid $darkblue;
+    background-color: $activeColor;
+    border-color: $ativeBorderColor;
   }
 
   &:active {
-    color: $blue;
+    color: $activeColor;
     background-color: transparent;
-    border: 2px solid $darkblue;
+    border-color: $ativeBorderColor;
   }
 }
