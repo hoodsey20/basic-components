@@ -53,9 +53,9 @@ $menuLVL1Color: #666;
   top: 0;
   right: 0;
   width: 30px;
-  height: 48px;
+  height: 46px;
   border: 0;
-  
+
   color: $menuLinkColor;
   background-color: transparent;
   outline: 0;
@@ -69,7 +69,7 @@ $menuLVL1Color: #666;
     color: $menuLinkColor;
     background-color: $menuBgr;
   }
-  
+
 
   &:hover {
     > .menuList__link {
@@ -110,7 +110,7 @@ $menuLVL1Color: #666;
 
   .menuList_toggler {
     color: $menuBgr;
-  }  
+  }
 }
 
 .menuList_lvl1.isCurrent {
@@ -146,7 +146,7 @@ $menuLVL1Color: #666;
 
   .menuList_toggler {
     color: $menuBgr;
-  }  
+  }
 }
 
 .menuList__item_lvl2.isCurrent {
