@@ -1,6 +1,8 @@
 var $ = require('jquery');
 
-$('.js-button').click(function (e) {
+$('.js-collapseCard .collapseCard__header').click(function (e) {
   e.preventDefault();
-  window.alert('button click');
+  var collapsedCard = $(this).parents('.collapseCard');
+  collapsedCard.toggleClass('collapseCard_isClosed');
+  collapsedCard.toggleClass('collapseCard_isOpen');
 })
