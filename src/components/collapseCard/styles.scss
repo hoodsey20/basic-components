@@ -1,6 +1,6 @@
 $angleColor: #3C88EE;
 
-.collapseCard_isClosed {
+.collapseCard.isClosed {
   .collapseCard__body {
     position: absolute;
     overflow: hidden;
@@ -22,7 +22,7 @@ $angleColor: #3C88EE;
   }
 }
 
-.collapseCard_isOpen {
+.collapseCard.isOpen {
   .collapseCard__down {
     display: none;
   }
