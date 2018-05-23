@@ -1,0 +1,23 @@
+{% set page = {
+  title: "contextMenu",
+  description: "Контекстное меню 👇"
+} %}
+
+{% import "./templates.njk" as element %}
+
+{% extends fesg.components %}
+
+{% block body %}
+  {% section title="contextMenu" %}
+    <h2>С заголовком</h2>
+    {{ element.clear('') }}
+    <div style="padding-bottom: 300px"></div>
+    <h2>contextMenu_horizontal_right</h2>
+    {{ element.clear('contextMenu_horizontal_right') }}
+    <div style="padding-bottom: 300px"></div>
+    <h2>contextMenu_vertical_top</h2>
+    {{ element.clear('contextMenu_vertical_top') }}
+  {% code %}
+    {{ element.clear('') }}
+  {% endsection %}
+{% endblock %}

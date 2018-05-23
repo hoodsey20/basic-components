@@ -1,5 +1,6 @@
 import './button/scripts'
 import './collapseCard/scripts'
+import './contextMenu/scripts'
 import './counter/scripts'
 import './detailCard/scripts'
 import './dropdownMenu/scripts'
