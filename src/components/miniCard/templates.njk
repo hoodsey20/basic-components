@@ -8,7 +8,7 @@
 
       <div class="miniCard__imgContainer">
 
-        <a href="#" class="miniCard__imgLink">
+        <a href="#" class="miniCard__imgLink" title="{{name}}">
           <div class="miniCard__imgParentSpreader">
             <div class="miniCard__imgChildSpreader">
               <img class="miniCard__img" src="{{src}}" alt="{{name}}">
@@ -38,10 +38,10 @@
         </div>
 
         <div class="miniCard__handlersContainer">
-          <button type="button" name="compare" class="miniCard__handler">
+          <button type="button" name="compare" aria-label="добавить товар к сравнению" class="miniCard__handler">
             <i class="fa fa-balance-scale"></i>
           </button>
-          <button type="button" name="like" class="miniCard__handler miniCard__handler_isActive">
+          <button type="button" name="like" aria-label="отметить товар как понравившийся" class="miniCard__handler isActive">
             <i class="fa fa-heart"></i>
           </button>
         </div>
@@ -49,7 +49,7 @@
 
       <div class="miniCard__contentContainer">
         <div class="miniCard__contentWrap">
-          <a href="#" class="miniCard__name">{{name}}</a>
+          <a href="#" title="{{name}}" class="miniCard__name">{{name}}</a>
           <div class="miniCard__vendorCode">Артикул: 9908245</div>
           <div class="minicard__starsContainer">
             {{ stars.bgr('3_', 'miniCard__stars') }}
